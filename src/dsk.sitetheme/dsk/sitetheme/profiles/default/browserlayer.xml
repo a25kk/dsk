@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+    name="dsk.sitetheme"
+    interface="dsk.sitetheme.interfaces.IDskSiteThemeLayer"
+  />
+</layers>
