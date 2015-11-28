@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+    name="dsk.sitecontent"
+    interface="dsk.sitecontent.interfaces.IDskSitecontentLayer"
+  />
+</layers>
