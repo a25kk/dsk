@@ -11366,6 +11366,18 @@ div.riform .label
     }
 }
 
+.template-frontpage-view .app-header
+{
+    padding-top: 1rem;
+}
+@media (min-width: 768px)
+{
+    .template-frontpage-view .app-header
+    {
+        border-bottom: 0;
+    }
+}
+
 @media (min-width: 768px)
 {
     .app-header-content
@@ -11530,6 +11542,10 @@ div.riform .label
 
     width: 100%;
 }
+.app-navbar-header-title a
+{
+    color: #fff;
+}
 
 .app-navbar-header-toggle
 {
@@ -11567,6 +11583,7 @@ div.riform .label
 
     padding: .5rem .75rem;
 
+    color: #fff;
     border: 1px solid transparent; 
     background: none;
 }
@@ -11958,83 +11975,41 @@ textarea
 {
     display: block;
 
-    width: 140px;
-}
-.app-brand-img-xs
-{
-    width: 64px;
-}
-.app-brand-img-sm
-{
-    width: 64px;
-}
-.app-brand-img-md
-{
-    width: 128px;
-}
-.app-brand-img-lg
-{
-    width: 272.576px;
+    width: 100%;
 }
 .app-brand-panel .app-brand-img
 {
     position: relative;
 
-    max-width: 33.3333333333%; 
+    max-width: 100%; 
     min-height: 1px;
     padding-right: .9375rem;
     padding-left: .9375rem;
 
-    -webkit-flex: 0 0 33.3333333333%;
-        -ms-flex: 0 0 33.3333333333%;
-            flex: 0 0 33.3333333333%;
+    -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
 }
 @media (min-width: 768px)
 {
     .app-brand-panel .app-brand-img
     {
-        max-width: 25%; 
+        max-width: 50%; 
 
-        -webkit-flex: 0 0 25%;
-            -ms-flex: 0 0 25%;
-                flex: 0 0 25%;
-    }
-}
-.app-brand-panel-inverse .app-brand-img
-{
-    position: relative;
-
-    min-height: 1px;
-    padding-right: .9375rem; 
-    padding-left: .9375rem;
-}
-@media (min-width: 768px)
-{
-    .app-brand-panel-inverse .app-brand-img
-    {
-        max-width: 25%; 
-
-        -webkit-flex: 0 0 25%;
-            -ms-flex: 0 0 25%;
-                flex: 0 0 25%;
+        -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
     }
 }
 
 .app-brandname-logo
 {
     width: 100%;
-    margin: 0 0 1rem 0;
+    margin: 2rem 0 1rem 0;
 }
-.app-header-brandbar .app-brandname-logo
+.app-brandname-logo path
 {
-    width: 64px;
-}
-@media (min-width: 544px)
-{
-    .app-header-brandbar .app-brandname-logo
-    {
-        width: 128px;
-    }
+    fill: #fff;
 }
 
 .app-brandname
@@ -12357,12 +12332,16 @@ img[data-sizes='auto']
 
     height: 370px;
     min-height: 370px;
-    margin-top: 1rem;
 
     background: transparent;
 }
 
 /* ---- Single banner item ---- */
+.app-banner-content
+{
+    border-top: .3rem solid #fff;
+}
+
 .app-banner-item
 {
     position: relative;

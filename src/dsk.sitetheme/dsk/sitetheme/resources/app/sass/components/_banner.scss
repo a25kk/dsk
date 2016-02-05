@@ -4,7 +4,6 @@
     height: 370px;
     min-height:370px;
     background: transparent;
-    margin-top: 1rem;
     @extend.container;
     overflow: hidden;
 }
@@ -13,6 +12,10 @@
 //
 //## This part will be filled dynamically with
 //## content and a lazyloaded background image
+
+.app-banner-content {
+  border-top: .3rem solid #fff;
+}
 
 .app-banner-item {
   position: relative;

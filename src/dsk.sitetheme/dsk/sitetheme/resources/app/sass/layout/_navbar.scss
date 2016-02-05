@@ -28,6 +28,9 @@
     font-size: 1.5rem;
     line-height: 1.5rem;
     width: 100%;
+    a {
+        color: #fff;
+    }
 }
 
 .app-navbar-header-toggle {
@@ -64,6 +67,7 @@
     font-size: $font-size-lg;
     line-height: 1;
     background: none;
+    color: #fff;
     border: $border-width solid transparent;
     @include border-radius($btn-border-radius);
 

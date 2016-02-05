@@ -18,41 +18,24 @@
 //** Inline svg logo
 .app-brand-img {
     display: block;
-    width: 140px;
-    &-xs {
-        width: 64px;
-    }
-    &-sm {
-        width: 64px;
-    }
-    &-md {
-        width: 128px;
-    }
-    &-lg {
-        width: 272.576px
-    }
+    width: 100%;
     .app-brand-panel & {
         @include make-col();
-        @include make-col-span(4);
+        @include make-col-span(12);
         @include media-breakpoint-up(md) {
-            @include make-col-span(3);
-        }
-    }
-    .app-brand-panel-inverse & {
-        @include make-col();
-        @include media-breakpoint-up(md) {
-            @include make-col-span(3);
+            @include make-col-span(6);
         }
     }
 }
 
 .app-brandname-logo {
     width: 100%;
-    margin: 0 0 1rem 0;
+    margin: 2rem 0 1rem 0;
+    path {
+        fill: #fff;
+    }
     .app-header-brandbar & {
-        width: 64px;
         @include media-breakpoint-up(sm) {
-            width: 128px;
         }
     }
 }
