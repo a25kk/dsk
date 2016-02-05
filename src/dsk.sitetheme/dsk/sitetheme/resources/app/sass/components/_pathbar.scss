@@ -5,6 +5,7 @@
 
 .app-pathbar {
     //@extend .breadcrumb;
+    @extend .container;
   margin-top: 0;
   font-size: $font-size-sm;
   border-radius: 0;
