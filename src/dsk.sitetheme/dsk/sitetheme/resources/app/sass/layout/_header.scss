@@ -6,7 +6,7 @@
 .app-header {
     padding-top: 1rem;
     @include media-breakpoint-up(md) {
-       border-bottom: .5rem solid $app-primary; 
+       border-bottom: .3rem solid $app-blue-primary; 
     }
     
 }

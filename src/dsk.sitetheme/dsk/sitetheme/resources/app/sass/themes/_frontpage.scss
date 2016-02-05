@@ -1,22 +1,6 @@
-.app-frontpage-top {
-	display: none;
-  		@include media-breakpoint-up(md) {
-  		display: flex;
-		flex-wrap: wrap;
-		//padding: 0 1rem;
+.app-top {
 		background: transparent;
-  		}
-	
-
-	.app-brandname-logo {
-		flex: 0 0 33.3333%;
-    	padding: 1rem 0 0 1rem;
-	}
-
-	.app-banner {
-		flex: 0 0 66.6666%;
-		padding: 0rem 0 0 1rem;
-	}
+		@include gradient-y($app-primary, $app-secondary, 0%, 100%);
 }
 
 .app-frontpage {
@@ -25,42 +9,9 @@
 }
 
 .app-intro {
-	display: flex;
-	flex-direction: column;
-	@include media-breakpoint-up(lg) {
-		flex-direction: row;
-		//padding-right: 1rem;
-	}
-}
-
-.app-intro-left {
-	flex: 1 100%;
 	width: 100%;
-	@include media-breakpoint-up(lg) {
-		flex: 0 0 33.3333%;
-	}
-	.app-intro-left-content {
+	.app-intro-content {
 		background: #eee;
 		padding: 2rem;
-	}
-}
-
-.app-intro-right {
-	line-height: 1.4rem;
-	padding: 1rem;
-	flex: 1 100%;
-	width: 100%;
-	//margin: 1rem 0 0 0;
-	@include media-breakpoint-up(lg) {
-		flex: 0 0 66.6666%;		
-	}
-	.app-intro-right-content {
-		background: #eee;
-		min-height: 100%;
-		padding: 2rem;
-		color: #000;
-		a {
-			color: $app-primary;
-		}
 	}
 }
