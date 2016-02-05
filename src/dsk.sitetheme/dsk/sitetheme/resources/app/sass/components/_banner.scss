@@ -1,0 +1,95 @@
+/* ---- Banner ---- */
+
+.app-banner {
+    height: 359px;
+    min-height:359px;
+    background: transparent;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+/* ---- Single banner item ---- */
+//
+//## This part will be filled dynamically with
+//## content and a lazyloaded background image
+
+.app-banner-item {
+  position: relative;
+  height: 100%;
+  min-height: 359px;
+  width: 100%;
+  background-size: cover !important;
+  background-position: top center;
+}
+
+.app-banner-item-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+  color: #fff;
+  min-height: 100px;
+  @include gradient-y(transparent, #000, 0%, 100%);
+}
+
+.app-banner-item-body {
+  color: #fff;
+  padding: 0rem 3rem 0rem 3rem;
+  width: 100%;
+}
+
+.app-baner-item-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.app-banner-item-description {
+  font-size: 0.9rem;
+}
+
+.app-banner-text {
+  font-size: 0.9rem;
+  a {
+    color: #fff;
+  }
+}
+
+/* ---- flickity overrides ---- */
+
+.flickity-prev-next-button {
+  background: transparent;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #fff;
+}
+
+.flickity-prev-next-button:hover {
+    background: none;
+}
+
+.flickity-page-dots {
+    text-align: right;
+    bottom: 10px !important;
+    padding-right: 1rem;
+}
+
+.flickity-page-dots .dot {
+    background: #fff;
+}
+
+/* ---- static banner ---- */
+
+.app-staticbanner {
+  height: 123px;
+  background: transparent url("../assets/img/sb01.jpg") repeat-x scroll top center;
+  background-size: cover;
+  body.template-frontpage-view & {display: none;} //nothing to display on homepage
+  .app-banner-item-title {
+    padding-top: 5rem;
+    padding-left: 1rem;
+    color: #fff;
+    font-size: 1.4rem;
+  }
+}
