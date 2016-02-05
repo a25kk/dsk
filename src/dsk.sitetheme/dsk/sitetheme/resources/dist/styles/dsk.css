@@ -4305,6 +4305,7 @@ pre code
 .app-brandbar-content,
 .app-footer-cards,
 .app-copyright,
+.app-banner,
 .app-news-panel-header,
 .app-news-list,
 .app-partner-cards,
@@ -4322,6 +4323,7 @@ pre code
     .app-brandbar-content,
     .app-footer-cards,
     .app-copyright,
+    .app-banner,
     .app-news-panel-header,
     .app-news-list,
     .app-partner-cards,
@@ -4337,6 +4339,7 @@ pre code
     .app-brandbar-content,
     .app-footer-cards,
     .app-copyright,
+    .app-banner,
     .app-news-panel-header,
     .app-news-list,
     .app-partner-cards,
@@ -4352,6 +4355,7 @@ pre code
     .app-brandbar-content,
     .app-footer-cards,
     .app-copyright,
+    .app-banner,
     .app-news-panel-header,
     .app-news-list,
     .app-partner-cards,
@@ -4367,6 +4371,7 @@ pre code
     .app-brandbar-content,
     .app-footer-cards,
     .app-copyright,
+    .app-banner,
     .app-news-panel-header,
     .app-news-list,
     .app-partner-cards,
@@ -12350,8 +12355,8 @@ img[data-sizes='auto']
 {
     overflow: hidden; 
 
-    height: 359px;
-    min-height: 359px;
+    height: 370px;
+    min-height: 370px;
     margin-top: 1rem;
 
     background: transparent;
@@ -12364,7 +12369,7 @@ img[data-sizes='auto']
 
     width: 100%;
     height: 100%;
-    min-height: 359px;
+    min-height: 370px;
 
     background-position: top center; 
     background-size: cover !important;
@@ -14192,7 +14197,7 @@ body.template-frontpage-view .app-pathbar
 .app-frontpage
 {
     width: 100%;
-    padding: 0 1rem 1rem 1rem;
+    padding: 0;
 }
 
 .app-intro
