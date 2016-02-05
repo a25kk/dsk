@@ -13524,7 +13524,7 @@ body.template-frontpage-view .app-pathbar
 {
     padding: 0; 
 
-    background: #e3dcec;
+    background: #e1e1e1;
 }
 
 .app-nav-list
@@ -13552,7 +13552,7 @@ body.template-frontpage-view .app-pathbar
     width: 100% !important; 
     padding: .5rem 1rem;
 
-    color: #3e2794 !important;
+    color: #396191 !important;
     border: 0 solid red;
 }
 .app-nav-list-link:hover
@@ -13560,12 +13560,12 @@ body.template-frontpage-view .app-pathbar
     text-decoration: none;
 
     color: #e6e6e6 !important;
-    background: #3e2794;
+    background: #396191;
 }
 .app-nav-list-link.navTreeCurrentNode
 {
     color: #fff !important;
-    background: #3e2794;
+    background: #396191;
 }
 
 .app-news-list
@@ -14112,12 +14112,12 @@ body.template-frontpage-view .app-pathbar
 {
     .app-content-aside
     {
-        max-width: 25%;
+        max-width: 33.3333333333%;
         padding: 0 1rem 1rem 1rem; 
 
-        -webkit-flex: 0 0 25%;
-            -ms-flex: 0 0 25%;
-                flex: 0 0 25%;
+        -webkit-flex: 0 0 33.3333333333%;
+            -ms-flex: 0 0 33.3333333333%;
+                flex: 0 0 33.3333333333%;
     }
 }
 
@@ -14133,12 +14133,12 @@ body.template-frontpage-view .app-pathbar
 {
     .app-content-main
     {
-        max-width: 75%;
+        max-width: 66.6666666667%;
         padding: 0 1rem 0 0; 
 
-        -webkit-flex: 0 0 75%;
-            -ms-flex: 0 0 75%;
-                flex: 0 0 75%;
+        -webkit-flex: 0 0 66.6666666667%;
+            -ms-flex: 0 0 66.6666666667%;
+                flex: 0 0 66.6666666667%;
     }
 }
 

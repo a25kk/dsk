@@ -4,7 +4,7 @@
 
 .app-card-nav {
 	.app-card-main {
-		background: #e3dcec;
+		background: $app-gray-dark;
 		padding: 0;
 	}
 }
@@ -24,7 +24,7 @@
 }
 
 .app-nav-list-link {
-	color: $app-primary !important;
+	color: $app-secondary !important;
 	padding: .5rem 1rem;
 	border: 0px solid red;
 	display: inline-block;
@@ -32,10 +32,16 @@
 	&:hover {
 		color: darken(#fff, 10%) !important;
 		text-decoration: none;
-		background: $app-primary;
+		background: $app-secondary;
 	}
 	&.navTreeCurrentNode {
 		color: #fff !important;
-		background: $app-primary;
+		background: $app-secondary;
 	}
 }
+
+//.app-nav-level-0 {
+//		 a {
+//		 	font-weight: 700;
+//		}	
+//}

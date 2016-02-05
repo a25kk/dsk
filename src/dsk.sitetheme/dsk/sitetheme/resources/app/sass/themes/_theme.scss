@@ -44,7 +44,7 @@
 .app-content-aside {
     @include make-col-span(12);
     @include media-breakpoint-up(md) {
-        @include make-col-span(3);
+        @include make-col-span(4);
         padding: 0 1rem 1rem 1rem;
     }
 }
@@ -52,7 +52,7 @@
 .app-content-main {
     @include make-col-span(12);
     @include media-breakpoint-up(md) {
-        @include make-col-span(9);
+        @include make-col-span(8);
         padding: 0 1rem 0 0;
     }
 }
