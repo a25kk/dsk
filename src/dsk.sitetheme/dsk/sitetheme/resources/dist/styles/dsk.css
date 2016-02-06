@@ -4306,6 +4306,7 @@ pre code
 .app-footer-cards,
 .app-copyright,
 .app-banner,
+.app-corporate-wrapper,
 .app-pathbar,
 .app-news-panel-header,
 .app-news-list,
@@ -4325,6 +4326,7 @@ pre code
     .app-footer-cards,
     .app-copyright,
     .app-banner,
+    .app-corporate-wrapper,
     .app-pathbar,
     .app-news-panel-header,
     .app-news-list,
@@ -4342,6 +4344,7 @@ pre code
     .app-footer-cards,
     .app-copyright,
     .app-banner,
+    .app-corporate-wrapper,
     .app-pathbar,
     .app-news-panel-header,
     .app-news-list,
@@ -4359,6 +4362,7 @@ pre code
     .app-footer-cards,
     .app-copyright,
     .app-banner,
+    .app-corporate-wrapper,
     .app-pathbar,
     .app-news-panel-header,
     .app-news-list,
@@ -4376,6 +4380,7 @@ pre code
     .app-footer-cards,
     .app-copyright,
     .app-banner,
+    .app-corporate-wrapper,
     .app-pathbar,
     .app-news-panel-header,
     .app-news-list,
@@ -12378,7 +12383,7 @@ img[data-sizes='auto']
 .app-banner-item-body
 {
     width: 100%; 
-    padding: 0rem 3rem 0rem 3rem;
+    padding: 0rem 6rem 6rem 3rem;
 
     color: #fff;
 }
@@ -12387,6 +12392,13 @@ img[data-sizes='auto']
 {
     font-size: 1.4rem;
     font-weight: 500;
+}
+@media (min-width: 544px)
+{
+    .app-baner-item-title
+    {
+        float: right !important;
+    }
 }
 
 .app-banner-item-description
@@ -12453,6 +12465,23 @@ body.template-frontpage-view .app-staticbanner
     padding-left: 1rem;
 
     color: #fff;
+}
+
+.app-corporate-wrapper
+{
+    border: 0 solid red;
+}
+.app-corporate-wrapper .app-coporate-logo
+{
+    position: relative;
+    z-index: 200000000;
+
+    float: right !important; 
+
+    width: 160px;
+    height: 160px;
+    margin-top: -78px;
+    margin-right: 6rem;
 }
 
 .app-callout
@@ -14068,7 +14097,7 @@ body.template-frontpage-view .app-pathbar
 {
     .app-main
     {
-        padding: 1rem 0 0 0;
+        padding: .3rem 0 0 0;
 
         border-right: 16px solid #fff; 
         border-left: 16px solid #fff;
@@ -14190,7 +14219,7 @@ body.template-frontpage-view .app-pathbar
 }
 .app-intro .app-intro-content
 {
-    padding: 2rem; 
+    padding: 3rem 2rem 2rem 2rem; 
 
     background: #eee;
 }
