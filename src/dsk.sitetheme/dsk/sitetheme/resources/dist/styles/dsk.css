@@ -12654,6 +12654,7 @@ body.template-frontpage-view .app-pathbar
 {
     font-size: .5 !important; 
 
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -12698,95 +12699,27 @@ body.template-frontpage-view .app-pathbar
 
 .app-card-header
 {
-    font-size: .5 !important; 
-
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
 
-    height: 6.5rem;
-    min-height: 6.5rem;
+    height: 4.5rem;
+    min-height: 4.5rem;
     padding: 1.5rem 1rem 1rem 2rem;
 
-    background: #3e2794;
+    background-image: linear-gradient(to right, #396191 0%, #3e2794 100%);
+    background-repeat: repeat-x;
 
     -webkit-justify-content: center;
     -ms-flex-pack: center;
             justify-content: center;
-}
-.app-card-header-eda
-{
-    background-image: linear-gradient(to right, #3f2794 0%, #28124f 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#FF28124F', GradientType=1);
-}
-.app-card-header-dsk
-{
-    background-image: linear-gradient(to right, #396191 0%, #3f2794 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF396191', endColorstr='#FF3F2794', GradientType=1);
-}
-.app-card-header-dps
-{
-    background-image: linear-gradient(to right, #925099 0%, #3f2794 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF925099', endColorstr='#FF3F2794', GradientType=1);
-}
-.app-card-header-dfs
-{
-    background-image: linear-gradient(to right, #0093b9 0%, #3f2794 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0093B9', endColorstr='#FF3F2794', GradientType=1);
-}
-.app-card-header-dpf
-{
-    background-image: linear-gradient(to right, #83a8d5 0%, #3f2794 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF83A8D5', endColorstr='#FF3F2794', GradientType=1);
-}
-.app-card-header-dhp
-{
-    background-image: linear-gradient(to right, #b7c443 0%, #6f9026 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFB7C443', endColorstr='#FF6F9026', GradientType=1);
-}
-.app-card-header-drz
-{
-    background-image: linear-gradient(to right, #f9f 0%, #c41e64 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFF99FF', endColorstr='#FFC41E64', GradientType=1);
-}
-.app-card-header-dgp
-{
-    background-image: linear-gradient(to right, #3f2794 0%, #28124f 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#FF28124F', GradientType=1);
-}
-.app-card-header-aid
-{
-    background-image: linear-gradient(to right, #3f2794 0%, #28124f 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#FF28124F', GradientType=1);
-}
-.app-card-header-hwa
-{
-    background-image: linear-gradient(to right, #3f2794 0%, #28124f 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#FF28124F', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF396191', endColorstr='#FF3E2794', GradientType=1);
 }
 
 .app-card-title
 {
+    font-size: 1.2rem; 
+
     -webkit-flex: 0 1 95%;
         -ms-flex: 0 1 95%;
             flex: 0 1 95%;
@@ -12928,7 +12861,7 @@ body.template-frontpage-view .app-pathbar
 
 .app-card-icon
 {
-    padding: 1rem 1rem 2rem 1rem; 
+    padding: 0rem 1rem 2rem 1rem; 
 
     -webkit-flex: 0 1 5%;
         -ms-flex: 0 1 5%;
@@ -12939,10 +12872,10 @@ body.template-frontpage-view .app-pathbar
 {
     height: 1.2rem;
 
-    background-image: linear-gradient(to right, #3f2794 0%, transparent 100%);
+    background-image: linear-gradient(to right, #396191 0%, transparent 100%);
     background-repeat: repeat-x;
 
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#00000000', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF396191', endColorstr='#00000000', GradientType=1);
 }
 
 .app-card-main
@@ -13005,99 +12938,18 @@ body.template-frontpage-view .app-pathbar
 
     content: '';
 
-    background-image: linear-gradient(to right, #3f2794 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#00000000', GradientType=1);
-}
-.app-card-banner-eda
-{
-    background-image: url('../assets/img/card-eda-bg.jpg');
-}
-.app-card-banner-dfs
-{
-    background-image: url('../assets/img/card-dfs-bg.jpg');
-}
-.app-card-banner-dfs::before
-{
-    background-image: linear-gradient(to right, #0093b9 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF0093B9', endColorstr='#00000000', GradientType=1);
-}
-.app-card-banner-dgp
-{
-    background-image: url('../assets/img/card-dgp-bg.jpg');
-}
-.app-card-banner-dgp::before
-{
-    background-image: linear-gradient(to right, #3f2794 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#00000000', GradientType=1);
-}
-.app-card-banner-dhp
-{
-    background-image: url('../assets/img/card-dhp-bg.jpg');
-}
-.app-card-banner-dhp::before
-{
-    background-image: linear-gradient(to right, #b7c443 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFB7C443', endColorstr='#00000000', GradientType=1);
-}
-.app-card-banner-dpf
-{
-    background-image: url('../assets/img/card-dpf-bg.jpg');
-}
-.app-card-banner-dpf::before
-{
-    background-image: linear-gradient(to right, #83a8d5 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF83A8D5', endColorstr='#00000000', GradientType=1);
-}
-.app-card-banner-dps
-{
-    background-image: url('../assets/img/card-dps-bg.jpg');
-}
-.app-card-banner-dps::before
-{
-    background-image: linear-gradient(to right, #925099 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF925099', endColorstr='#00000000', GradientType=1);
-}
-.app-card-banner-drz
-{
-    background-image: url('../assets/img/card-drz-bg.jpg');
-}
-.app-card-banner-drz::before
-{
-    background-image: linear-gradient(to right, #f9f 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFF99FF', endColorstr='#00000000', GradientType=1);
-}
-.app-card-banner-dsk
-{
-    background-image: url('../assets/img/card-dsk-bg.jpg');
-}
-.app-card-banner-dsk::before
-{
     background-image: linear-gradient(to right, #396191 0%, transparent 100%);
     background-repeat: repeat-x;
 
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF396191', endColorstr='#00000000', GradientType=1);
 }
-.app-card-banner-aid
+.app-card-banner-ma
 {
-    background-image: url('../assets/img/card-eda-bg.jpg');
+    background-image: url('../assets/img/card-ma-bg.jpg');
 }
-.app-card-banner-hwa
+.app-card-banner-ps
 {
-    background-image: url('../assets/img/card-hwa-bg.jpg');
+    background-image: url('../assets/img/card-ps-bg.jpg');
 }
 
 .app-card-placeholder
@@ -13360,22 +13212,6 @@ body.template-frontpage-view .app-pathbar
 .card-dgp .app-card-main
 {
     background: transparent url('../assets/img/card-dgp-bg.jpg') no-repeat scroll top center;
-}
-
-.card-aid .app-card-header
-{
-    background-image: linear-gradient(to right, #3f2794 0%, #28124f 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#FF28124F', GradientType=1);
-}
-
-.card-aid .app-card-trenner
-{
-    background-image: linear-gradient(to right, #3f2794 0%, transparent 100%);
-    background-repeat: repeat-x;
-
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3F2794', endColorstr='#00000000', GradientType=1);
 }
 
 .card-hwa .app-card-header

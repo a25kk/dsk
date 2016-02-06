@@ -13,6 +13,7 @@
 
 .app-frontpage-cards {
     margin-bottom: 1rem;
+    margin-top: 1rem;
     font-size: 0.5 !important;
 }
 
@@ -42,44 +43,43 @@
 .app-card-header {
     display: flex;
     justify-content: center;
-    height: 6.5rem;
-    min-height: 6.5rem;
+    height: 4.5rem;
+    min-height: 4.5rem;
     padding: 1.5rem 1rem 1rem 2rem;
-    background: $app-primary;
-    font-size: 0.5 !important;
+    @include gradient-x($app-secondary, $app-primary, 0%, 100%);
     //@include media-breakpoint-down(md) {
     //    height: 10rem;
     //}
-    &-eda {
-        @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    }
-    &-dsk {
-        @include gradient-x($app-dsk-primary, $app-dsk-secondary, 0%, 100%);
-    }
-    &-dps {
-        @include gradient-x($app-dps-primary, $app-dps-secondary, 0%, 100%);
-    }
-    &-dfs {
-        @include gradient-x($app-dfs-primary, $app-dfs-secondary, 0%, 100%);
-    }
-    &-dpf {
-        @include gradient-x($app-dpf-primary, $app-dpf-secondary, 0%, 100%);
-    }
-    &-dhp {
-        @include gradient-x($app-dhp-primary, $app-dhp-secondary, 0%, 100%);
-    }
-    &-drz {
-        @include gradient-x($app-drz-primary, $app-drz-secondary, 0%, 100%);
-    }
-    &-dgp {
-        @include gradient-x($app-dgp-primary, $app-dgp-secondary, 0%, 100%);
-    }
-    &-aid {
-        @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    }
-    &-hwa {
-        @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    }
+    //&-eda {
+    //    @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
+    //}
+    //&-dsk {
+    //    @include gradient-x($app-dsk-primary, $app-dsk-secondary, 0%, 100%);
+    //}
+    //&-dps {
+    //    @include gradient-x($app-dps-primary, $app-dps-secondary, 0%, 100%);
+    //}
+    //&-dfs {
+    //    @include gradient-x($app-dfs-primary, $app-dfs-secondary, 0%, 100%);
+    //}
+    //&-dpf {
+    //    @include gradient-x($app-dpf-primary, $app-dpf-secondary, 0%, 100%);
+    //}
+    //&-dhp {
+    //    @include gradient-x($app-dhp-primary, $app-dhp-secondary, 0%, 100%);
+    //}
+    //&-drz {
+    //    @include gradient-x($app-drz-primary, $app-drz-secondary, 0%, 100%);
+    //}
+    //&-dgp {
+    //    @include gradient-x($app-dgp-primary, $app-dgp-secondary, 0%, 100%);
+    //}
+    //&-ma {
+    //    @include gradient-x($app-secondary, $app-primary, 0%, 100%);
+    //}
+    //&-hwa {
+    //    @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
+    //}
 }
 
 //== Card title
@@ -87,6 +87,7 @@
 //## Title is used inside the card header
 .app-card-title {
     flex: 0 1 95%;
+    font-size: 1.2rem;
     
     // Fill svg paths per default
     path {
@@ -133,12 +134,12 @@ $card-title-spacers: (
 
 .app-card-icon {
     flex: 0 1 5%;
-    padding: 1rem 1rem 2rem 1rem;
+    padding: 0rem 1rem 2rem 1rem;
 }
 
 .app-card-trenner {
     height: 1.2rem;
-    @include gradient-x($app-eda-primary, transparent, 0%, 100%);
+    @include gradient-x($app-secondary, transparent, 0%, 100%);
 }
 
 //** Card content
@@ -195,58 +196,13 @@ $card-title-spacers: (
         display: block;
         width: 100%;
         height: 1.2rem;
-        @include gradient-x($app-eda-primary, transparent, 0%, 100%);
+        @include gradient-x($app-secondary, transparent, 0%, 100%);
     }
-    &-eda {
-        background-image: url("../assets/img/card-eda-bg.jpg");
+    &-ma {
+        background-image: url("../assets/img/card-ma-bg.jpg");
     }
-    &-dfs {
-        background-image: url("../assets/img/card-dfs-bg.jpg");
-        &::before {
-            @include gradient-x($app-dfs-primary, transparent, 0%, 100%);
-        }
-    }
-    &-dgp {
-        background-image: url("../assets/img/card-dgp-bg.jpg");
-        &::before {
-            @include gradient-x($app-dgp-primary, transparent, 0%, 100%);
-        }
-    }
-    &-dhp {
-        background-image: url("../assets/img/card-dhp-bg.jpg");
-        &::before {
-            @include gradient-x($app-dhp-primary, transparent, 0%, 100%);
-        }
-    }
-    &-dpf {
-        background-image: url("../assets/img/card-dpf-bg.jpg");
-        &::before {
-            @include gradient-x($app-dpf-primary, transparent, 0%, 100%);
-        }
-    }
-    &-dps {
-        background-image: url("../assets/img/card-dps-bg.jpg");
-        &::before {
-            @include gradient-x($app-dps-primary, transparent, 0%, 100%);
-        }
-    }
-    &-drz {
-        background-image: url("../assets/img/card-drz-bg.jpg");
-        &::before {
-            @include gradient-x($app-drz-primary, transparent, 0%, 100%);
-        }
-    }
-    &-dsk {
-        background-image: url("../assets/img/card-dsk-bg.jpg");
-        &::before {
-            @include gradient-x($app-dsk-primary, transparent, 0%, 100%);
-        }
-    }
-    &-aid {
-        background-image: url("../assets/img/card-eda-bg.jpg");
-    }
-    &-hwa {
-        background-image: url("../assets/img/card-hwa-bg.jpg");
+    &-ps {
+        background-image: url("../assets/img/card-ps-bg.jpg");
     }
 }
 
@@ -415,13 +371,7 @@ $card-title-spacers: (
     }
 }
 //** education / Ausbildung im Diako
-.card-aid {
-    .app-card-header {
-        @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    }
-    .app-card-trenner {
-        @include gradient-x($app-eda-primary, transparent, 0%, 100%);
-    }
+.card-ma {
 }
 //** hwa / Hans-Weinberger-Akademie
 .card-hwa {
