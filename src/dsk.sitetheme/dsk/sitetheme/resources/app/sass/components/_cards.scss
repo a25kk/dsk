@@ -47,39 +47,6 @@
     min-height: 4.5rem;
     padding: 1.5rem 1rem 1rem 2rem;
     @include gradient-x($app-secondary, $app-primary, 0%, 100%);
-    //@include media-breakpoint-down(md) {
-    //    height: 10rem;
-    //}
-    //&-eda {
-    //    @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    //}
-    //&-dsk {
-    //    @include gradient-x($app-dsk-primary, $app-dsk-secondary, 0%, 100%);
-    //}
-    //&-dps {
-    //    @include gradient-x($app-dps-primary, $app-dps-secondary, 0%, 100%);
-    //}
-    //&-dfs {
-    //    @include gradient-x($app-dfs-primary, $app-dfs-secondary, 0%, 100%);
-    //}
-    //&-dpf {
-    //    @include gradient-x($app-dpf-primary, $app-dpf-secondary, 0%, 100%);
-    //}
-    //&-dhp {
-    //    @include gradient-x($app-dhp-primary, $app-dhp-secondary, 0%, 100%);
-    //}
-    //&-drz {
-    //    @include gradient-x($app-drz-primary, $app-drz-secondary, 0%, 100%);
-    //}
-    //&-dgp {
-    //    @include gradient-x($app-dgp-primary, $app-dgp-secondary, 0%, 100%);
-    //}
-    //&-ma {
-    //    @include gradient-x($app-secondary, $app-primary, 0%, 100%);
-    //}
-    //&-hwa {
-    //    @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    //}
 }
 
 //== Card title
@@ -87,9 +54,10 @@
 //## Title is used inside the card header
 .app-card-title {
     flex: 0 1 95%;
-    font-size: 1.2rem;
-    @include media-breakpoint-down(sm) {
-        font-size: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    @include media-breakpoint-up(sm) {
+        font-size: 1.2rem;
     }
     
     // Fill svg paths per default
@@ -246,158 +214,6 @@ $card-title-spacers: (
     color: $gray-lighter;
     font-size: 2rem;
 }
-
-//** eda / Evangelische Diakonissenanstalt Augsburg
-
-.card-eda {
-    .app-card-header {
-        @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    }
-    background: transparent url("../assets/img/card-eda-bg.jpg") no-repeat scroll top center;
-}
-
-//** dsk / Die stadtklinik im diako
-
-.card-dsk {
-    .app-card-header {
-        @include gradient-x($app-dsk-primary, $app-dsk-secondary, 0%, 100%);
-    }
-    .app-card-title {
-        padding-right: 3.5rem;
-    }
-    .app-card-trenner {
-        @include gradient-x($app-dsk-primary, transparent, 0%, 100%);
-    }
-    .app-card-main {
-        background: transparent url("../assets/img/card-dsk-bg.jpg") no-repeat scroll top center;
-    }
-}
-//** dps / die Pflegeschulen des Diako
-.card-dps {
-    .app-card-header {
-        @include gradient-x($app-dps-primary, $app-dps-secondary, 0%, 100%);
-    }
-    .app-card-title {
-        padding-right: 1rem;
-    }
-    .app-card-trenner {
-        @include gradient-x($app-dps-primary, transparent, 0%, 100%);
-    }
-    .app-card-main {
-        background: transparent url("../assets/img/card-dps-bg.jpg") no-repeat scroll top center;
-    }
-}
-//** dfs / die Fachakademie für Sozialpädagogik des Diako
-.card-dfs {
-    .app-card-header {
-        @include gradient-x($app-dfs-primary, $app-dfs-secondary, 0%, 100%);
-    }
-    .app-card-title {
-        padding-right: 1rem;
-    }
-    .app-card-icon {
-        padding: 1rem 1rem 2rem 3rem;
-    }
-    .app-card-trenner {
-        @include gradient-x($app-dfs-primary, transparent, 0%, 100%);
-    }
-    .app-card-main {
-        background: transparent url("../assets/img/card-dfs-bg.jpg") no-repeat scroll top center;
-    }
-}
-
-//** dpf / das Pauline Fisher Haus
-.card-dpf {
-    .app-card-header {
-        @include gradient-x($app-dpf-primary, $app-dpf-secondary, 0%, 100%);
-    }
-    .app-card-title {
-        @include media-breakpoint-up(sm) {
-           padding-right: 6.5rem;
-           border: 1px solid green;
-        }
-    }
-    .app-card-icon {
-    padding: 1rem 1rem 2rem 1rem;
-    }
-    .app-card-trenner {
-        @include gradient-x($app-dpf-primary, transparent, 0%, 100%);
-    }
-    .app-card-main {
-        background: transparent url("../assets/img/card-dpf-bg.jpg") no-repeat scroll top center;
-    }
-}
-//** dhp / das Hotel am alten Park
-.card-dhp {
-    .app-card-header {
-        @include gradient-x($app-dhp-primary, $app-dhp-secondary, 0%, 100%);
-    }
-    .app-card-title {
-        padding-right: 0;
-    }
-    .app-card-icon {
-    padding: 1rem 1rem 2rem 7rem;
-    }
-    .app-card-trenner {
-        @include gradient-x($app-dhp-primary, transparent, 0%, 100%);
-    }
-    .app-card-main {
-        background: transparent url("../assets/img/card-dhp-bg.jpg") no-repeat scroll top center;
-    }
-}
-//** drz / restaurant zeit.los
-.card-drz {
-    .app-card-header {
-        @include gradient-x($app-drz-primary, $app-drz-secondary, 0%, 100%);
-    }
-    .app-card-title {
-        padding-right: 0;
-    }
-    .app-card-icon {
-    padding: 1rem 1rem 2rem 7rem;
-    }
-    .app-card-trenner {
-        @include gradient-x($app-drz-primary, transparent, 0%, 100%);
-    }
-  .app-card-main {
-    background: transparent url("../assets/img/card-drz-bg.jpg") no-repeat scroll top center;
-    }
-}
-//** dgp / Gesundheitspartner
-.card-dgp {
-    .app-card-header {
-        @include gradient-x($app-dgp-primary, $app-dgp-secondary, 0%, 100%);
-    }
-    .app-card-title {
-        padding-right: 0;
-        font-size: 1.5rem;
-        @include media-breakpoint-down(sm) {
-           font-size: 1rem;
-        }
-    }
-    .app-card-icon {
-    padding: 1rem 1rem 2rem 2rem;
-    }
-    .app-card-trenner {
-        @include gradient-x($app-dgp-primary, transparent, 0%, 100%);
-    }
-    .app-card-main {
-        background: transparent url("../assets/img/card-dgp-bg.jpg") no-repeat scroll top center;
-    }
-}
-//** education / Ausbildung im Diako
-.card-ma {
-}
-//** hwa / Hans-Weinberger-Akademie
-.card-hwa {
-    .app-card-header {
-        @include gradient-x($app-eda-primary, $app-eda-secondary, 0%, 100%);
-    }
-    .app-card-trenner {
-        @include gradient-x($app-eda-primary, transparent, 0%, 100%);
-    }
-}
-
 
 //== Embedded card
 //
