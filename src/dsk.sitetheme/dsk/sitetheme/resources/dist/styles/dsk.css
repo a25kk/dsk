@@ -12951,6 +12951,10 @@ body.template-frontpage-view .app-pathbar
 {
     background-image: url('../assets/img/card-ps-bg.jpg');
 }
+.app-card-banner-fd
+{
+    background-image: url('../assets/img/card-fd-bg.jpg');
+}
 
 .app-card-placeholder
 {
