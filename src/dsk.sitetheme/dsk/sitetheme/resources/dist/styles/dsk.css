@@ -12724,6 +12724,13 @@ body.template-frontpage-view .app-pathbar
         -ms-flex: 0 1 95%;
             flex: 0 1 95%;
 }
+@media (max-width: 767px)
+{
+    .app-card-title
+    {
+        font-size: 1rem;
+    }
+}
 .app-card-title path
 {
     fill: #fff;
