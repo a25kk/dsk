@@ -12987,6 +12987,18 @@ body.template-frontpage-view .app-pathbar
 {
     background-image: url('../assets/img/card-chirurgie-bg.jpg');
 }
+.app-card-banner-frauenheilkunde
+{
+    background-image: url('../assets/img/card-frauenheilkunde-bg.jpg');
+}
+.app-card-banner-innere
+{
+    background-image: url('../assets/img/card-innere-bg.jpg');
+}
+.app-card-banner-urologie
+{
+    background-image: url('../assets/img/card-urologie-bg.jpg');
+}
 
 .app-card-placeholder
 {
