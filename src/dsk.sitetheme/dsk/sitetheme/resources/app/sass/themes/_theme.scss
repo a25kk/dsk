@@ -57,6 +57,14 @@
     }
 }
 
+.app-content-main-full {
+  @include make-col-span(12);
+    @include media-breakpoint-up(md) {
+        @include make-col-span(12);
+        padding: 0 1rem 0 0;
+    }
+}
+
 .app-aside {
   flex: 0 0 100%;
     @include media-breakpoint-up(sm) {
