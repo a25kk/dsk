@@ -13086,12 +13086,25 @@ body.template-frontpage-view .app-pathbar
 
 .card-quick .app-card-main
 {
-    background: #3e2794;
+    background-image: linear-gradient(to bottom, #3e2794 0%, #396191 100%);
+    background-repeat: repeat-x;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3E2794', endColorstr='#FF396191', GradientType=0);
 }
 
 .card-quick .app-card-content
 {
     font-size: 1rem;
+}
+
+.card-quick .app-subcard-title
+{
+    font-size: .9rem;
+}
+
+.card-quick a:hover
+{
+    opacity: .6;
 }
 
 .card-quick .subcard-tl
@@ -13112,7 +13125,7 @@ body.template-frontpage-view .app-pathbar
 .card-quick .logo-pray
 {
     width: 86px;
-    height: 87px;
+    height: 89px;
     margin: 0 auto !important;
 }
 
@@ -13134,8 +13147,8 @@ body.template-frontpage-view .app-pathbar
 .card-quick .logo-donation
 {
     width: 86px;
-    height: 87px;
-    margin: 0 auto !important;
+    height: 80px;
+    margin: .6rem auto 0 auto !important;
 }
 
 .card-quick .subcard-bl
@@ -13158,7 +13171,7 @@ body.template-frontpage-view .app-pathbar
     width: 98px;
     height: 87px;
     margin: 0 auto !important;
-    padding-top: 1.5rem;
+    padding-top: 1.6rem;
 }
 
 .card-quick .subcard-br
@@ -13179,7 +13192,7 @@ body.template-frontpage-view .app-pathbar
 .card-quick .logo-parking
 {
     width: 86px;
-    height: 87px;
+    height: 89px;
     margin: 0 auto !important;
     padding-top: 1rem;
 }

@@ -266,12 +266,16 @@ $card-title-spacers: (
         flex: 0 0 100%;
     }
     .app-card-main {
-        background: $app-primary;
+        @include gradient-y($app-primary, $app-secondary, 0%, 100%);
     }
     .app-card-content {
         font-size: 1rem;
     }
     .app-subcard-title {
+        font-size: .9rem;
+    }
+    a:hover {
+        opacity: 0.6;       
     }
 
 //** quick / Subcard pray
@@ -286,7 +290,7 @@ $card-title-spacers: (
 }
 .logo-pray {
     width: 86px;
-    height: 87px;
+    height: 89px;
     margin: 0 auto !important;
 }
 
@@ -304,8 +308,8 @@ $card-title-spacers: (
 
 .logo-donation {
     width: 86px;
-    height: 87px;
-    margin: 0 auto !important;
+    height: 80px;
+    margin: .6rem auto 0 auto !important;
 }
 
 //** quick / Subcard employee
@@ -323,7 +327,7 @@ $card-title-spacers: (
     width: 98px;
     height: 87px;
     margin: 0 auto !important;
-    padding-top: 1.5rem;
+    padding-top: 1.6rem;
 }
 
 //** quick / Subcard parking
@@ -339,7 +343,7 @@ $card-title-spacers: (
 
 .logo-parking {
     width: 86px;
-    height: 87px;
+    height: 89px;
     margin: 0 auto !important;
     padding-top: 1rem;
     }
