@@ -13197,6 +13197,130 @@ body.template-frontpage-view .app-pathbar
     padding-top: 1rem;
 }
 
+.app-card-contact .app-card-header
+{
+    font-size: 1rem !important;
+    font-weight: 700; 
+
+    height: auto;
+    min-height: auto;
+    padding: .5rem;
+
+    color: #fff;
+    background: #396191;
+}
+
+.app-card-contact .app-page-abstract
+{
+    font-size: .8rem;
+
+    margin-bottom: 0;
+    padding: .5rem;
+
+    color: #fff; 
+    background: #3e2794;
+}
+
+.app-card-contact .app-card-content
+{
+    padding: 0;
+
+    color: #000;
+}
+.app-card-contact .app-card-content address
+{
+    margin-bottom: 0;
+}
+
+.app-card-contact .app-card-footer
+{
+    padding: 1rem !important; 
+
+    background: #eee;
+}
+
+.app-card-contact .app-page-image-container
+{
+    margin-bottom: 0;
+}
+
+.app-card-contact a
+{
+    color: #fff;
+}
+
+.app-card-contact .btn-primary
+{
+    width: 100%;
+
+    border-color: #396191; 
+    background: #396191;
+}
+
+.app-contact-position
+{
+    font-weight: 700;
+
+    padding: 1rem;
+}
+
+.app-contact-phone
+{
+    position: relative; 
+
+    padding-left: 1rem;
+}
+.app-contact-phone:before
+{
+    font-family: FontAwesome;
+
+    padding-right: .7rem; 
+
+    content: '\f095';
+}
+
+.app-contact-fax
+{
+    position: relative; 
+
+    padding-left: 1rem;
+}
+.app-contact-fax:before
+{
+    font-family: FontAwesome;
+
+    padding-right: .5rem; 
+
+    content: '\f1ac';
+}
+
+.app-contact-email
+{
+    position: relative;
+
+    color: #fff;
+}
+.app-contact-email:before
+{
+    font-family: FontAwesome;
+
+    padding-right: .5rem;
+
+    content: '\f003';
+
+    color: #fff;
+}
+
+.template-contact-view .app-contact-position
+{
+    padding-left: 1rem;
+}
+
+.template-contact-view address
+{
+    padding-left: 1rem;
+}
+
 .app-card-nav .app-card-main
 {
     padding: 0; 
