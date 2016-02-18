@@ -13319,52 +13319,86 @@ body.template-frontpage-view .app-pathbar
     padding-left: 1rem;
 }
 
-.app-card-nav .app-card-main
-{
-    padding: 0; 
-
-    background: #e1e1e1;
-}
-
-.app-nav-list
+.app-nav-list,
+.navTree
 {
     padding-left: 0;
 
-    list-style: none;
+    list-style: none; 
+
+    background: #eee;
 }
 
-.app-nav-list-item
+.app-nav-list .app-card-main
+{
+    padding: 0;
+}
+
+.navTreeItem
 {
     margin-left: 0;
 }
-.app-nav-list-item:not(last)
+.navTreeItem .image-icon
 {
-    margin-bottom: 0;
-
-    border-bottom: 1px solid #fff;
+    display: none;
 }
-
-.app-nav-list-link
+.navTreeItem > a
 {
-    display: inline-block;
+    display: block;
 
-    width: 100% !important; 
+    margin: 0; 
     padding: .5rem 1rem;
 
-    color: #396191 !important;
-    border: 0 solid red;
-}
-.app-nav-list-link:hover
-{
     text-decoration: none;
 
-    color: #e6e6e6 !important;
+    color: #2e4f76;
+    border-bottom: 1px solid #fff;
+}
+.navTreeItem > a:hover,
+.navTreeItem > a:focus
+{
+    color: #fff;
     background: #396191;
 }
-.app-nav-list-link.navTreeCurrentNode
+
+.navTreeCurrentItem
 {
     color: #fff !important;
     background: #396191;
+}
+
+.navTreeItemInPath
+{
+    color: #fff !important;
+    background: #396191;
+}
+
+.navTreeItem .navTreeLevel0 li a:link
+{
+    font-size: 1.5rem;
+}
+
+.navTreeLevel1
+{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.navTreeItem .navTreeLevel1 li a:link
+{
+    font-size: .8rem; 
+
+    padding-left: 2rem;
+}
+
+.navTreeLevel2
+{
+    margin-left: 0;
+}
+
+.navTreeLevel3
+{
+    margin-left: 0;
 }
 
 .app-news-list
