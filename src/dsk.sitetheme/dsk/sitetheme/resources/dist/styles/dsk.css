@@ -12718,8 +12718,8 @@ body.template-frontpage-view .app-pathbar
 
 .app-card-title
 {
-    font-size: 1rem;
-    font-weight: 500; 
+    font-size: .8rem;
+    font-weight: 700; 
 
     -webkit-flex: 0 1 95%;
         -ms-flex: 0 1 95%;
@@ -12729,7 +12729,7 @@ body.template-frontpage-view .app-pathbar
 {
     .app-card-title
     {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 .app-card-title path
@@ -12998,6 +12998,18 @@ body.template-frontpage-view .app-pathbar
 .app-card-banner-urologie
 {
     background-image: url('../assets/img/card-urologie-bg.jpg');
+}
+.app-card-banner-ueber-unsere-pflege
+{
+    background-image: url('../assets/img/card-ueber-unsere-pflege-bg.jpg');
+}
+.app-card-banner-pflege-und-leitungsphilosophie
+{
+    background-image: url('../assets/img/card-pflege-und-leitungsphilosophie-bg.jpg');
+}
+.app-card-banner-aus-fort-und-weiterbildung
+{
+    background-image: url('../assets/img/card-aus-fort-und-weiterbildung-bg.jpg');
 }
 
 .app-card-placeholder

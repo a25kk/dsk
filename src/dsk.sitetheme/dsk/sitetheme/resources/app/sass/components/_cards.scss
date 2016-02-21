@@ -54,10 +54,10 @@
 //## Title is used inside the card header
 .app-card-title {
     flex: 0 1 95%;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: .8rem;
+    font-weight: 700;
     @include media-breakpoint-up(sm) {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     // Fill svg paths per default
@@ -205,10 +205,19 @@ $card-title-spacers: (
     &-urologie {
         background-image: url("../assets/img/card-urologie-bg.jpg");
     }
+    &-ueber-unsere-pflege {
+        background-image: url("../assets/img/card-ueber-unsere-pflege-bg.jpg");
+    }
+    &-pflege-und-leitungsphilosophie {
+        background-image: url("../assets/img/card-pflege-und-leitungsphilosophie-bg.jpg");
+    }
+    &-aus-fort-und-weiterbildung {
+        background-image: url("../assets/img/card-aus-fort-und-weiterbildung-bg.jpg");
+    }
 }
 
 
-//== Placeholder for missing card content
+//== Placeholder for missing card content 
 //
 //## Provide call to actions and descriptions on empty cards
 //## by providing highlighted card content
