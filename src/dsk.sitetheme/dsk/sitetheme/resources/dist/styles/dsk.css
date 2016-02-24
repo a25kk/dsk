@@ -13336,6 +13336,114 @@ body.template-frontpage-view .app-pathbar
     padding-left: 1rem;
 }
 
+.app-contact-element
+{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
+.app-contact-element-aside
+{
+    -webkit-flex: 0 0 33.3333%;
+        -ms-flex: 0 0 33.3333%;
+            flex: 0 0 33.3333%;
+}
+.app-contact-element-aside a
+{
+    font-weight: 400;
+
+    text-decoration: none;
+
+    color: #3e2794;
+}
+.app-contact-element-aside a:hover
+{
+    opacity: .9;
+}
+@media (max-width: 991px)
+{
+    .app-contact-element-aside
+    {
+        -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+    }
+}
+@media (max-width: 767px)
+{
+    .app-contact-element-aside
+    {
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+    }
+}
+
+.app-contact-element-main
+{
+    padding: 1rem;
+
+    background: #eee; 
+
+    -webkit-flex: 0 0 66.6666%;
+        -ms-flex: 0 0 66.6666%;
+            flex: 0 0 66.6666%;
+}
+@media (max-width: 991px)
+{
+    .app-contact-element-main
+    {
+        -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+    }
+}
+@media (max-width: 767px)
+{
+    .app-contact-element-main
+    {
+        -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+    }
+}
+.app-contact-element-main address
+{
+    margin-bottom: 0;
+}
+.app-contact-element-main .app-contact-position
+{
+    padding: 1rem 0;
+}
+.app-contact-element-main .app-contact-phone,
+.app-contact-element-main .app-contact-fax
+{
+    padding: 0;
+}
+
+.app-contact-element-title
+{
+    font-size: 2rem; 
+    font-weight: 700;
+
+    padding-bottom: 1rem;
+}
+
+.app-contact-element-media
+{
+    margin: 0;
+}
+
+.app-contact-actions
+{
+    padding-top: 1rem;
+}
+
 .app-nav-list,
 .navTree
 {
@@ -13962,12 +14070,12 @@ body.template-frontpage-view .app-pathbar
 {
     .app-content-aside
     {
-        max-width: 33.3333333333%;
+        max-width: 25%;
         padding: 0 1rem 1rem 1rem; 
 
-        -webkit-flex: 0 0 33.3333333333%;
-            -ms-flex: 0 0 33.3333333333%;
-                flex: 0 0 33.3333333333%;
+        -webkit-flex: 0 0 25%;
+            -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
     }
 }
 
@@ -13983,12 +14091,12 @@ body.template-frontpage-view .app-pathbar
 {
     .app-content-main
     {
-        max-width: 66.6666666667%;
+        max-width: 75%;
         padding: 0 1rem 0 0; 
 
-        -webkit-flex: 0 0 66.6666666667%;
-            -ms-flex: 0 0 66.6666666667%;
-                flex: 0 0 66.6666666667%;
+        -webkit-flex: 0 0 75%;
+            -ms-flex: 0 0 75%;
+                flex: 0 0 75%;
     }
 }
 

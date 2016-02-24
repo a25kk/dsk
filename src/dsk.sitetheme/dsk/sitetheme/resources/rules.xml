@@ -21,7 +21,7 @@
 
 
 
-    <!-- Rules applying to a standard Plone web page -->
+<!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">
 
         <notheme if="$ajax_load" />
@@ -178,8 +178,8 @@
 
         <!-- Support contact card viewlet -->
         <after css:theme="#content"
-          css:content="#app-contact-viewlet"
-          css:if-content="#app-contact-viewlet" />
+          css:content="#app-contact-viewlet-elements"
+          css:if-content="#app-contact-viewlet-elements" />
 
         <!-- Alert and portal messages -->
         <before css:content=".portalMessage" css:theme="#content" />
@@ -406,6 +406,7 @@
             </div>
         </replace>
 
+
         <!-- News -->
         <replace css:content-children="#app-news-list"
             css:theme-children="#app-news-list-frontpage" />
@@ -417,7 +418,7 @@
             css:theme-children="#app-sidebar" />
 
         <after css:theme-children="#app-sidebar"
-          css:content-children="#viewlet-below-content" />
+          css:content-children="#app-contact-viewlet-cards" />
 
     </rules>
 

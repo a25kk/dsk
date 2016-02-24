@@ -455,3 +455,76 @@ $card-title-spacers: (
 }
 
 
+//** Contact / Elements modules
+
+
+.app-contact-viewlet-elements {
+}
+
+.app-contact-element {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.app-contact-element-aside {
+
+    flex: 0 0 33.3333%;
+    a {
+        font-weight: 400;
+        text-decoration: none;
+        color: $app-primary;
+    }
+    a:hover {
+        opacity: 0.9;
+    }
+    @include media-breakpoint-down(md) {
+        flex: 0 0 50%;
+    }
+    @include media-breakpoint-down(sm) {
+        flex: 0 0 100%;
+    }
+
+}
+
+.app-contact-element-main {
+    flex: 0 0 66.6666%;
+    padding: 1rem;
+    background: #eee;
+
+    @include media-breakpoint-down(md) {
+        flex: 0 0 50%;
+    }
+    @include media-breakpoint-down(sm) {
+        flex: 0 0 100%;
+    }
+
+    address {
+        margin-bottom: 0;
+    }
+
+    .app-contact-position {
+        padding: 1rem 0;
+    }
+
+    .app-contact-phone,
+    .app-contact-fax {
+        padding: 0;
+    }
+}
+
+.app-contact-element-title {
+    font-weight: 700;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.app-contact-element-media {
+    margin: 0;
+}
+
+.app-contact-actions {
+    padding-top: 1rem;
+}
+
+
+
