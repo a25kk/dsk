@@ -29,4 +29,9 @@
         type="theme"
     />
 
+    <utility
+        provides="dsk.sitecontent.interfaces.IResponsiveImagesTool"
+        factory="dsk.sitecontent.imagetool.ResponsiveImagesTool"
+        />
+
 </configure>
