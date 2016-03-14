@@ -12388,22 +12388,24 @@ img[data-sizes='auto']
 .app-banner-item-body
 {
     width: 100%; 
-    padding: 0rem 6rem 6rem 3rem;
+    padding: 0rem 2rem;
 
     color: #fff;
+}
+@media (min-width: 544px)
+{
+    .app-banner-item-body
+    {
+        padding: 0rem 6rem 6rem 3rem; 
+
+        text-align: right;
+    }
 }
 
 .app-baner-item-title
 {
     font-size: 1.4rem;
-    font-weight: 500;
-}
-@media (min-width: 544px)
-{
-    .app-baner-item-title
-    {
-        float: right !important;
-    }
+    font-weight: 700;
 }
 
 .app-banner-item-description
