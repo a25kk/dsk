@@ -19,21 +19,29 @@
 
 //** Base card styles
 .app-card {
-    flex: 0 0 33.3333%;
+    @include when-inside('.no-flexbox') {
+        // Fallback
+        display: table-cell;
+    }
     color: #fff;
     a {
-        font-weight: 400;
-        text-decoration: none;
         color: #fff;
     }
     a:hover {
-        opacity: 0.9;
+        text-decoration: none;
     }
-    @include media-breakpoint-down(md) {
-        flex: 0 0 50%;
+
+    a:visited {
+        text-decoration: none;
     }
-    @include media-breakpoint-down(sm) {
-        flex: 0 0 100%;
+    @include when-inside('.app-cards') {
+        @include make-col(12);
+        @include media-breakpoint-up(sm) {
+            @include make-col(6);
+        }
+        @include media-breakpoint-up(md) {
+            @include make-col(4);
+        }
     }
 }
 
@@ -256,12 +264,15 @@ $card-title-spacers: (
     margin-right: 0;
     margin-bottom: 0;
     flex: 0 1 50%;
+    max-width: 50%;
     padding: 1.5rem;
         @include media-breakpoint-down(md) {
         flex: 0 0 50%;
+        max-width: 50%;
     }
         @include media-breakpoint-down(sm) {
             flex: 0 0 100%;
+            max-width: 100%;
         }
     path {
         fill: #fff;
