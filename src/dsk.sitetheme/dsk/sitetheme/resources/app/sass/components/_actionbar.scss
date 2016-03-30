@@ -21,7 +21,7 @@
   flex: 1;
   padding: .5rem .25rem;
   color: #fff;
-  background: $app-primary;
+  background: $app-secondary;
   text-align: center;
   &:nth-child(even) {
     color: #fff;
@@ -58,7 +58,7 @@
 
 .app-searchbox-btn {
   width: 25%;
-  @include button-variant(#fff, $app-primary, $app-primary);
+  @include button-variant(#fff, $app-secondary, $app-secondary);
   .fa {
     margin: 0 auto;
   }
@@ -81,31 +81,6 @@
 
 .app-action-right {
   width: 25%;
-  background: $app-primary;
+  background: $app-secondary;
   color: #fff;
-}
-
-.actionMenu {
-  display: none;
-}
-
-.searchPage .input-group {
-  margin-bottom: 1rem;
-}
-
-.searchPage .input-group {
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
-}
-
-.searchResults {
-  padding-left: 1rem;
-
-> li {
-  border-bottom: 1px solid #ccc;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  list-style-position: outside;
-}
 }
