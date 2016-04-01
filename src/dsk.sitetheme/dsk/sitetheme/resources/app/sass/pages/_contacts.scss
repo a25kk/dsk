@@ -127,22 +127,9 @@
 }
 
 .app-card-viewlet-item {
-    //border: 1px solid black;
     margin-bottom: 1rem;
-    //@include make-row();
-    @include media-breakpoint-up(sm) {
-    //@include make-col(6);
-    //padding-left: 0;
-    }
-    @include when-inside('.app-content-aside') {
-        @include media-breakpoint-up(sm) {
-    @include make-col(12);
-    padding-left: 0;
-    padding-right: 0;
-    }
-    }
-    
 }
+
 .app-contact-element {
     @include make-row();
     padding-right: 1rem;
@@ -152,26 +139,25 @@
 }
 
 .app-contact-element-aside {
-    @include make-col(4);
+    @include make-col(12);
     padding-right: 0;
-    //border: 1px solid blue;
-    //@include media-breakpoint-up(sm) {
-    //    @include make-col(6);
-    //}
-    //@include media-breakpoint-up(md) {
-    //    @include make-col(4);
-    //}
+    @include media-breakpoint-up(sm) {
+        @include make-col(4);
+    }
 }
 
 .app-contact-element-main {
-     @include make-col(8);
-     //border: 1px solid green;
+    @include make-col(12);
+    margin-left: 1rem;
+    border-right: 15px solid #fff;
     padding: 1rem;
     background-color: $app-gray;
-    margin-left: 0rem;
-    margin-right: 0rem;
-    //margin-top: 1rem;
-    //min-height: 300px;
+    @include media-breakpoint-up(sm) {
+        @include make-col(8);
+        margin-left: 0rem;
+        border-right: 0;
+    }
+    
 }
 
 .app-contact-element-title {
