@@ -119,17 +119,20 @@
 // area and need a horizontal layout grid
 
 .app-contact-viewlet-elements {
-    @include make-row();
+    //@include make-row();
+    //border: 1px solid red;
     @include media-breakpoint-up(sm) {
-        padding-left: 1rem;
+        padding-left: 0rem;
     } 
 }
 
 .app-card-viewlet-item {
-    @include make-col(12);
+    //border: 1px solid black;
+    margin-bottom: 1rem;
+    //@include make-row();
     @include media-breakpoint-up(sm) {
-    @include make-col(6);
-    padding-left: 0;
+    //@include make-col(6);
+    //padding-left: 0;
     }
     @include when-inside('.app-content-aside') {
         @include media-breakpoint-up(sm) {
@@ -141,13 +144,17 @@
     
 }
 .app-contact-element {
+    @include make-row();
+    padding-right: 1rem;
     address {
         margin: 0;
     }
 }
 
 .app-contact-element-aside {
-    @include make-col(12);
+    @include make-col(4);
+    padding-right: 0;
+    //border: 1px solid blue;
     //@include media-breakpoint-up(sm) {
     //    @include make-col(6);
     //}
@@ -157,12 +164,14 @@
 }
 
 .app-contact-element-main {
+     @include make-col(8);
+     //border: 1px solid green;
     padding: 1rem;
     background-color: $app-gray;
     margin-left: 0rem;
     margin-right: 0rem;
-    margin-top: 1rem;
-    min-height: 350px;
+    //margin-top: 1rem;
+    //min-height: 300px;
 }
 
 .app-contact-element-title {

@@ -15168,56 +15168,17 @@ body.template-frontpage-view .app-pathbar
     padding-left: 1rem;
 }
 
-.app-contact-viewlet-elements
-{
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display:         flex;
-
-    margin-right: -15px; 
-    margin-left: -15px;
-
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-}
 @media (min-width: 544px)
 {
     .app-contact-viewlet-elements
     {
-        padding-left: 1rem;
+        padding-left: 0rem;
     }
 }
 
 .app-card-viewlet-item
 {
-    position: relative;
-
-    max-width: 100%; 
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-
-    -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-}
-@media (min-width: 544px)
-{
-    .app-card-viewlet-item
-    {
-        position: relative;
-
-        max-width: 50%;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-        padding-left: 0; 
-
-        -webkit-flex: 0 0 50%;
-            -ms-flex: 0 0 50%;
-                flex: 0 0 50%;
-    }
+    margin-bottom: 1rem;
 }
 @media (min-width: 544px)
 {
@@ -15238,6 +15199,20 @@ body.template-frontpage-view .app-pathbar
     }
 }
 
+.app-contact-element
+{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-right: 1rem; 
+
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
 .app-contact-element address
 {
     margin: 0;
@@ -15247,25 +15222,34 @@ body.template-frontpage-view .app-pathbar
 {
     position: relative;
 
-    max-width: 100%; 
+    max-width: 33.3333333333%;
     min-height: 1px;
     padding-right: 15px;
+    padding-right: 0; 
     padding-left: 15px;
 
-    -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+    -webkit-flex: 0 0 33.3333333333%;
+        -ms-flex: 0 0 33.3333333333%;
+            flex: 0 0 33.3333333333%;
 }
 
 .app-contact-element-main
 {
-    min-height: 350px; 
-    margin-top: 1rem;
-    margin-right: 0rem;
+    position: relative;
+
+    max-width: 66.6666666667%;
+    min-height: 1px;
+    margin-right: 0rem; 
     margin-left: 0rem;
     padding: 1rem;
+    padding-right: 15px;
+    padding-left: 15px;
 
     background-color: #eee;
+
+    -webkit-flex: 0 0 66.6666666667%;
+        -ms-flex: 0 0 66.6666666667%;
+            flex: 0 0 66.6666666667%;
 }
 
 .app-contact-element-title
