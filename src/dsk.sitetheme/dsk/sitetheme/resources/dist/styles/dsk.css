@@ -14697,6 +14697,11 @@ body.template-frontpage-view .app-pathbar
     width: 100%;
 }
 
+.image-inline
+{
+    width: 100%;
+}
+
 .app-page-embed
 {
     margin-bottom: 1rem;
