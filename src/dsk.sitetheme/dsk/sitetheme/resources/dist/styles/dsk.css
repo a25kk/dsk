@@ -14403,36 +14403,67 @@ body.template-frontpage-view .app-pathbar
 
 .app-partner-cards-wrapper
 {
-    padding: 2rem; 
+    padding: 0; 
 
     background: #f0f0f0;
+}
+@media (min-width: 544px)
+{
+    .app-partner-cards-wrapper
+    {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 768px)
+{
+    .app-partner-cards .app-card
+    {
+        max-width: 50%; 
+
+        -webkit-flex: 0 0 50%;
+            -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 992px)
+{
+    .app-partner-cards .app-card
+    {
+        max-width: 33.3333%; 
+
+        -webkit-flex: 0 0 33.3333%;
+            -ms-flex: 0 0 33.3333%;
+                flex: 0 0 33.3333%;
+    }
 }
 
 .partner-card
 {
     min-height: 200px;
-}
-
-.partner-card-dl
-{
-    background: #fff url('../assets/img/logo-dl.jpg') no-repeat scroll center center;
-}
-
-.partner-card-elkb
-{
-    padding: 4rem 2rem 0 2rem; 
 
     background: #fff;
 }
 
-.partner-card-elda
+.partner-card-01
 {
-    background: #fff url('../assets/img/logo-elda.png') no-repeat scroll center center;
+    background: #fff url('../assets/img/partner-01.jpg') no-repeat scroll center center;
 }
 
-.partner-card-vivaxx
+.partner-card-02
 {
-    background: #fff url('../assets/img/logo-vivaxx.png') no-repeat scroll center center;
+    background: #fff url('../assets/img/partner-02.jpg') no-repeat scroll center center;
+}
+
+.partner-card-03
+{
+    background: #fff url('../assets/img/partner-03.jpg') no-repeat scroll center center;
+}
+
+.partner-card-04
+{
+    background: #fff url('../assets/img/partner-04.jpg') no-repeat scroll center center;
 }
 
 .app-layout-simple
