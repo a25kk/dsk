@@ -14466,6 +14466,11 @@ body.template-frontpage-view .app-pathbar
     background: #fff url('../assets/img/partner-04.jpg') no-repeat scroll center center;
 }
 
+.partner-card-05
+{
+    background: #fff url('../assets/img/partner-05.jpg') no-repeat scroll center center;
+}
+
 .app-layout-simple
 {
     background: #373a3c;
