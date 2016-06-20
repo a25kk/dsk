@@ -61,7 +61,7 @@
 
 .adress {
     a {
-        color: $app-primaryx;
+        color: $app-primary;
     }
     @include media-breakpoint-up(sm) {
         flex: 0 0 50%;

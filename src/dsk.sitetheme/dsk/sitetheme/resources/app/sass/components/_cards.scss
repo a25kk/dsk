@@ -224,6 +224,11 @@ $card-title-spacers: (
     }
 }
 
+.app-card-content-lead {
+    background: $app-gray;
+    padding: 1rem !important;
+}
+
 
 //== Placeholder for missing card content 
 //

@@ -13858,6 +13858,13 @@ body.template-frontpage-view .app-pathbar
     background-image: url('../assets/img/card-aus-fort-und-weiterbildung-bg.jpg');
 }
 
+.app-card-content-lead
+{
+    padding: 1rem !important; 
+
+    background: #eee;
+}
+
 .app-card-placeholder
 {
     margin: .5rem auto;
