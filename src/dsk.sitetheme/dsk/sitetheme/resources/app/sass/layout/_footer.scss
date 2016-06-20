@@ -8,7 +8,7 @@
     background: url(../assets/img/footer.jpg) no-repeat 0 50%;
     background-size: cover;
     min-height: 400px;
-    color: #fff;
+    color: #000;
     font-size: $font-size-sm;
 }
 
@@ -27,7 +27,7 @@
 
 
 .app-footer-link {
-    color: #fff;
+    color: $app-primary;
     &:hover {
         color: darken(#fff, 6.5%);
     }
@@ -61,7 +61,7 @@
 
 .adress {
     a {
-        color: #fff !important;
+        color: $app-primary;
     }
     @include media-breakpoint-up(sm) {
         flex: 0 0 50%;
