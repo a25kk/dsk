@@ -71,3 +71,22 @@
 .embed-responsive {
   margin-bottom: 1rem;
 }
+
+.app-page-block {
+    @include make-row();
+    padding: 0 1rem;
+}
+
+.app-page-block-content {
+    @include make-col(12);
+    margin-bottom: 1rem;
+    padding: 0;
+    background: #fff;
+    img {
+        @extend.img-fluid;
+    }
+      @include media-breakpoint-up(sm) {
+          @include make-col(6);
+          padding: 1rem;
+      }
+}

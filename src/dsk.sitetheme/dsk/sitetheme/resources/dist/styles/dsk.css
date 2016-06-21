@@ -4379,6 +4379,7 @@ mark,
 .app-img,
 .image-inline,
 .image-left,
+.app-page-block-content img,
 .newsImage,
 .tileImage
 {
@@ -14498,6 +14499,52 @@ body.template-frontpage-view .app-pathbar
 .app-page-embed
 {
     margin-bottom: 1rem;
+}
+
+.app-page-block
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 0 1rem; 
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.app-page-block-content
+{
+    position: relative;
+
+    max-width: 100%;
+    min-height: 1px;
+    margin-bottom: 1rem;
+    padding: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    background: #fff; 
+
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+}
+@media (min-width: 544px)
+{
+    .app-page-block-content
+    {
+        position: relative;
+
+        max-width: 50%;
+        min-height: 1px;
+        padding: 1rem; 
+        padding-right: 15px;
+        padding-left: 15px;
+
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    }
 }
 
 .app-section-cards .app-card
