@@ -15079,6 +15079,23 @@ body.template-frontpage-view .app-pathbar
     padding-top: 1rem;
 }
 
+#pfg-fieldwrapper legend
+{
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.PFGFieldsetWidget
+{
+    margin-bottom: 1rem; 
+    padding: 2rem;
+
+    border: 1px solid #3e2794;
+}
+
 @media (min-width: 992px)
 {
     .app-wrapper

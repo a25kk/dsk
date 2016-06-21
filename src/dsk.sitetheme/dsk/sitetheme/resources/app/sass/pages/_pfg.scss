@@ -1,0 +1,19 @@
+//
+// custom PFG overrides
+// -------------------------------------
+
+
+#pfg-fieldwrapper {
+	legend {
+		font-size: 1.2rem;
+		font-weight: 500;
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+}
+
+.PFGFieldsetWidget {
+	border: 1px solid $app-primary;
+	padding: 2rem;
+	margin-bottom: 1rem;
+}
