@@ -90,3 +90,25 @@
           padding: 1rem;
       }
 }
+
+.app-page-block-content-left {
+    @include make-col(12);
+    margin-bottom: 1rem;
+    padding: 0;
+    background: #fff;
+      @include media-breakpoint-up(sm) {
+          @include make-col(3);
+          padding: 1rem;
+      }
+}
+
+.app-page-block-content-right {
+    @include make-col(12);
+    margin-bottom: 1rem;
+    padding: 0;
+    background: #fff;
+      @include media-breakpoint-up(sm) {
+          @include make-col(9);
+          padding: 1rem;
+      }
+}
