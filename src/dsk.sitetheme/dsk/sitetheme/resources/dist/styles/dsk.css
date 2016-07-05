@@ -13017,11 +13017,11 @@ img[data-sizes='auto']
 
 .flickity-page-dots
 {
-    bottom: 10px !important;
+    bottom: 2rem !important;
 
-    padding-right: 1rem; 
+    padding-left: 1rem; 
 
-    text-align: right;
+    text-align: left;
 }
 
 .flickity-page-dots .dot
