@@ -15400,4 +15400,13 @@ body.template-frontpage-view .app-pathbar
 
     background: #eee;
 }
+
+.text-warning::after
+{
+    display: inline;
+
+    content: '*';
+
+    color: #3e2794;
+}
 /*# sourceMappingURL=dsk.css.map */
