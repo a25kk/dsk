@@ -12,14 +12,14 @@
     <theme href="dist/signin/index.html" css:if-content="body.template-mail_password_response" />
     <theme href="dist/signin/index.html" css:if-content="body.template-pwreset_form" />
     <theme href="dist/signin/index.html" css:if-content="body.template-pwreset_finish" />
+    <theme href="dist/full/index.html" css:if-content="body.subsection-diese-seite-wird-gerade-erstellt" />
     <theme href="dist/frontpage/index.html" css:if-content="body.template-frontpage-view" />
     <theme href="dist/index.html" css:if-content="body.portaltype-dsk-sitecontent-contentpage" />
     <theme href="dist/medicine/index.html" css:if-content="body.section-medizin-und-aerzte" />
     <theme href="dist/care/index.html" css:if-content="body.section-pflege-in-der-stadtklinik" />
     <theme href="dist/partner/index.html" css:if-content="body.section-gesundheitspartner" />
-    <theme href="dist/full/index.html" css:if-content="body.subsection-diese-seite-wird-gerade-erstellt" />
     <theme href="dist/full/index.html" css:if-content="body.template-search" />
-    
+
     
 
 
