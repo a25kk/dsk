@@ -19,27 +19,12 @@ article.vevent {
     border-radius: 1em 1em 1em 1em;
     margin-top: 1em;
     padding: 1em;
-    color: #000;
-    font-size: $font-size-base;
-    width: 100%;
 }
 
-.vevent div.cal_date {
-    float:right;
-    vertical-align:top;
-    margin: 0 1.5em 0.5em 0;
-    padding:0.7em 0.7em 0.5em;
-    background-color:white;
-    border:none;
-    border-radius:0.5em;
-    box-shadow: 0.5em 0.5em 0.4em black;
-    min-width:4.4em;
-}
 .vevent span.cal_wkday {
     display:block;
-    font-size:1.2em;
-    font-weight:bold;
-    border-bottom:2px solid black;
+    font-size:1.5em;
+    font-weight: 700;
     padding-bottom:0.3em;
 }
 .vevent span.cal_day {
@@ -51,14 +36,13 @@ article.vevent {
     font-size:1.3em;
     line-height:1.3em;
     display:inline-block;
+    background: transparent;
 }
 
 .vevent div.cal_info {
-    @media (min-width: $screen-sm-min) {
-        margin-right:3em;
-    }
-    h2 {
-        margin-top: 0;
+    @include media-breakpoint-up(sm) {
+        margin-right:0;
+        margin-left: 0;
     }
 }
 
@@ -119,7 +103,7 @@ article.vevent .documentByLine {
 }
 #content .event_listing nav ul li {
     display:inline-block;
-    padding: 0 0.3em;
+    padding: 0 0.75em;
     line-height: 2em;
     margin:0;
 }
@@ -141,6 +125,18 @@ article.vevent .documentByLine {
     margin-left: 0;
     float:left;
 }
+
+ul.mode_selector {
+    font-size: 18px;
+    margin-top: 3rem;
+    padding: 1rem;
+    background: $app-gray-dark;
+    li {
+        display: inline;
+        padding-right: 1rem;
+    }
+}
+
 .event_listing ul.sub_nav {
     display: none;
     margin-left: 0;
@@ -152,13 +148,12 @@ article.vevent .documentByLine {
     border:none;
     display: inline-block;
 }
-
-.event_listing ul.mode_selector li,
 .event_listing ul.mode_selector li:hover,
 .event_listing ul.mode_selector li.selected {
-    background: #ccc;
-    border-radius: 0.5em;
-    color: #000;
+    background: white;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    color: Black;
 }
 .event_listing ul.mode_selector li.selected {
     font-weight: bold;
@@ -324,34 +319,81 @@ article.vevent .documentByLine {
         li.selected a {
             font-weight: bold;
             color: white;
-            padding-left: $line-height-computed;
-            padding-right: $line-height-computed;
-            border-radius: $border-radius-base;
+            padding-left: 1rem;
+            padding-right:1rem;
+            border-radius: .5rem;
         }
     }
 }
 
 .event_listing ul.mode_selector li:hover, .event_listing ul.mode_selector li.selected {
     background: none repeat scroll 0 0 #cccccc;
-    border-radius: $border-radius-base !important;
+    border-radius: .5rem !important;
     color: #000000;
 }
 
 article.vevent {
-    border-radius: $border-radius-base !important;
+    border-radius: .5rem !important;
     background-color: #efefef !important;
+    padding: 1rem;
+    @include make-row();
+}
+
+.vevent {
+    .hiddenStructure {
+        display: none;
+    }
+}
+
+.event {
+    .hiddenStructure {
+        display: none;
+    }
 }
 
 .vevent div.cal_date {
-    background-color: #FFFFFF;
+    background-color: $app-secondary;
     border: medium none;
-    border-radius: $border-radius-base !important;
-    box-shadow: 2px 2px 2px #000000 !important;
-    float: left;
-    margin: 0 1.5em 7em 0;
+    border-radius: 0;
+    box-shadow: none;
+    float: none;
+    margin: 0 0 0 0;
     min-width: 4.4em;
-    padding: 0.7em 0.7em 0.5em;
+    padding: 1rem;
     vertical-align: top;
+    text-align: center;
+    color: #fff;
+}
+
+//.vevent div.cal_date {
+//    //.hidden-xs();
+//    float:right;
+//    vertical-align:top;
+//    margin: 0 1.5em 0 0;
+//    padding:0.7em 0.7em 0.5em;
+//    background-color:white;
+//    border:none;
+//    border-radius:0.5em;
+//    box-shadow: 0.5em 0.5em 0.4em black;
+//    min-width:4.4em;
+//}
+
+.cal_date {
+    @include make-col(12);
+    border-right: 0;
+    @include media-breakpoint-up(sm) {
+        @include make-col(3);
+        border-right: 15px solid #eee !important;
+    }
+}
+
+.cal_info {
+    background: $app-gray-dark;
+    padding: 1rem 0;
+    @include make-col(12);
+    @include media-breakpoint-up(sm) {
+        @include make-col(9);
+    }
 }
 
 .event_listing ul.mode_selector {
@@ -359,11 +401,10 @@ article.vevent {
 }
 
 .summary {
-    font-size: $font-size-base;
 }
 
 .summary dt {
-    text-transform: none;
+    text-transform: uppercase;
 }
 
 .timezone {
@@ -373,34 +414,26 @@ article.vevent {
 
 .event.details {
     float: none;
-    margin: $line-height-computed 0;
+    margin: 1rem 1rem 1rem 0;
     background: #efefef;
-    opacity: 0.7;
-    padding: $line-height-computed;
-    color: #000;
+    padding: 1rem;
     dt {
         background: #efefef;
-        padding: ($line-height-computed / 2);
+        padding: .5rem;
     }
     dd {
-        padding: ($line-height-computed / 2);
+        padding: .5rem;
     }
 }
 
 // Hide dtstart and dtend values
 
 .hCalendar-hidden {
-    @extended .hidden;
+    //.hidden();
 }
 
 .event {
     ul {
         list-style-position: inside;
     }
-}
-.mode_month,
-.mode_week,
-.mode_day,
-.mode_ical {
-    display: none !important;
 }
