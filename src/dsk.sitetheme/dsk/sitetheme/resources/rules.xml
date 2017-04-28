@@ -20,6 +20,7 @@
     <theme href="dist/partner/index.html" css:if-content="body.section-gesundheitspartner" />
     <theme href="dist/full/index.html" css:if-content="body.section-kontakt " />
     <theme href="dist/full/index.html" css:if-content="body.template-search" />
+    <theme href="dist/full/index.html" css:if-content="body.section-events" />
 
     
 
