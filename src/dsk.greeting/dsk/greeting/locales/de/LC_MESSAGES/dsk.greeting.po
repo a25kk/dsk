@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: Wed May 31 17:03:12 2017\n"
-"PO-Revision-Date: 2017-05-31 18:36+0300\n"
+"PO-Revision-Date: 2017-07-12 22:34+0200\n"
 "Last-Translator: irina <besja@yandex.ru>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -24,76 +24,77 @@ msgstr ""
 "Generated-By: zope/app/locales/extract.py\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #. Default: "Select image"
 #: dsk.greeting:/browser/form.pt:71
 msgid "select_image"
-msgstr ""
+msgstr "Bitte wählen Sie ein Bild aus, das Sie als Gruß an den Patienten schicken möchten"
 
 #: dsk.greeting:/browser/form.py:106
 msgid "Send"
-msgstr ""
+msgstr "Abschicken"
 
 #: dsk.greeting:/browser/form.py:122
 msgid "New greeting"
-msgstr ""
+msgstr "Genesungswünsch"
 
 #: dsk.greeting:/browser/form.py:146
 msgid "Recipient address rejected by server."
-msgstr ""
+msgstr "Ihre E-Mail konnte nicht zugestellt werden."
 
 #: dsk.greeting:/browser/form.py:151
 msgid "Submit complete"
-msgstr ""
+msgstr "Ihre E-Mail wurde erfolgreich zugestellt"
 
 #: dsk.greeting:/browser/form.py:155
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: dsk.greeting:/browser/form.py:55
 msgid "Name of receptor"
-msgstr ""
+msgstr "Patientenname (Vor- und Zuname)"
 
 #: dsk.greeting:/browser/form.py:59
 msgid "Station and room number"
-msgstr ""
+msgstr "Stations- und Zimmernummer"
 
 #: dsk.greeting:/browser/form.py:63
 msgid "Your name"
-msgstr ""
+msgstr "Ihr Name"
 
 #: dsk.greeting:/browser/form.py:67
 msgid "Your email"
-msgstr ""
+msgstr "Ihre E-Mailadresse"
 
 #: dsk.greeting:/browser/form.py:72
 msgid "Your greeting"
-msgstr ""
+msgstr "Ihre Genesungswünsche"
 
 #: dsk.greeting:/browser/form.py:76
 msgid "Image"
-msgstr ""
+msgstr "das Bild"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:21
 msgid "Hello,"
-msgstr ""
+msgstr "Hallo,"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:36
 msgid "recipient:"
-msgstr ""
+msgstr "Empfänger:"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:37
 msgid "location:"
-msgstr ""
+msgstr "Stations- und Zimmernummer"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:38
 msgid "name:"
-msgstr ""
+msgstr "Patientenname:"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:39
 msgid "email:"
-msgstr ""
+msgstr "E-Mailadresse:"
 
 #: dsk.greeting:/utils.py:47 dsk.greeting:/utils.py:49
 msgid "Invalid email address."
-msgstr ""
+msgstr "Ungültige E-Mail-Adresse."
