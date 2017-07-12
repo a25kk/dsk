@@ -13,15 +13,31 @@
 }
 
 .app-images-select-item {
+	margin-bottom: 1rem;
 	@include make-col(12);
 	 @include media-breakpoint-up(sm) {
         @include make-col(4);
     }
+
+    a:hover {
+		color: #fff;
+	}
+
+	.active {
+		border: 1px solid $app-secondary;
+		display: block;
+		padding: .5rem;
+		color: #fff;
+	}
 }
 
 .images-select-image img {
 	@extend.img-fluid;
 	width: 100%;
+}
+
+.images-select-image {
+	color: #fff;
 }
 
 .app-images-select-form {
@@ -37,6 +53,11 @@
     .textarea-widget {
     	min-height: 300px;
     }
+}
+
+.images-select-image-title {
+	background: $app-secondary;
+	padding: 1rem;
 }
 
 

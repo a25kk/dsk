@@ -15847,6 +15847,7 @@ article.vevent
 
     max-width: 100%; 
     min-height: 1px;
+    margin-bottom: 1rem;
     padding-right: 15px;
     padding-left: 15px;
 
@@ -15868,10 +15869,28 @@ article.vevent
             flex: 0 0 33.3333333333%;
     }
 }
+.app-images-select-item a:hover
+{
+    color: #fff;
+}
+.app-images-select-item .active
+{
+    display: block;
+
+    padding: .5rem;
+
+    color: #fff; 
+    border: 1px solid #396191;
+}
 
 .images-select-image img
 {
     width: 100%;
+}
+
+.images-select-image
+{
+    color: #fff;
 }
 
 .app-images-select-form
@@ -15916,6 +15935,13 @@ article.vevent
 .app-images-select-form-item .textarea-widget
 {
     min-height: 300px;
+}
+
+.images-select-image-title
+{
+    padding: 1rem; 
+
+    background: #396191;
 }
 
 @media (min-width: 992px)
