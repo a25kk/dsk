@@ -4381,7 +4381,8 @@ mark,
 .image-left,
 .app-page-block-content img,
 .newsImage,
-.tileImage
+.tileImage,
+.images-select-image img
 {
     display: block;
 
@@ -15826,6 +15827,95 @@ article.vevent
 .event ul
 {
     list-style-position: inside;
+}
+
+.app-images-select
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    margin-right: -15px; 
+    margin-left: -15px;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.app-images-select-item
+{
+    position: relative;
+
+    max-width: 100%; 
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+}
+@media (min-width: 544px)
+{
+    .app-images-select-item
+    {
+        position: relative;
+
+        max-width: 33.3333333333%; 
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        -ms-flex: 0 0 33.3333333333%;
+            flex: 0 0 33.3333333333%;
+    }
+}
+
+.images-select-image img
+{
+    width: 100%;
+}
+
+.app-images-select-form
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    margin-right: -15px; 
+    margin-left: -15px;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+.app-images-select-form-item
+{
+    position: relative;
+
+    max-width: 100%; 
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+}
+@media (min-width: 544px)
+{
+    .app-images-select-form-item
+    {
+        position: relative;
+
+        max-width: 50%; 
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    }
+}
+.app-images-select-form-item .textarea-widget
+{
+    min-height: 300px;
 }
 
 @media (min-width: 992px)

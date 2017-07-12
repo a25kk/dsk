@@ -1,0 +1,42 @@
+//
+// Greeting specific image and media styles
+// ----------------------------------------------------------------
+
+
+
+#dsk-greeting {
+	//border: 1px solid red;
+}
+
+.app-images-select {
+	@include make-row();
+}
+
+.app-images-select-item {
+	@include make-col(12);
+	 @include media-breakpoint-up(sm) {
+        @include make-col(4);
+    }
+}
+
+.images-select-image img {
+	@extend.img-fluid;
+	width: 100%;
+}
+
+.app-images-select-form {
+	@include make-row();
+}
+
+.app-images-select-form-item {
+	@include make-col(12);
+	 @include media-breakpoint-up(sm) {
+        @include make-col(6);
+    }
+
+    .textarea-widget {
+    	min-height: 300px;
+    }
+}
+
+
