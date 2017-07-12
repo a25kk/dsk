@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "POT-Creation-Date: Wed May 31 17:03:12 2017\n"
-"PO-Revision-Date: 2017-07-12 22:34+0200\n"
+"PO-Revision-Date: 2017-07-12 22:40+0200\n"
 "Last-Translator: irina <besja@yandex.ru>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr ""
 #. Default: "Select image"
 #: dsk.greeting:/browser/form.pt:71
 msgid "select_image"
-msgstr "Bitte wählen Sie ein Bild aus, das Sie als Gruß an den Patienten schicken möchten"
+msgstr "Bitte wählen Sie ein Bild aus, das Sie als Gruß an den Patienten schicken möchten."
 
 #: dsk.greeting:/browser/form.py:106
 msgid "Send"
@@ -77,7 +77,7 @@ msgstr "das Bild"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:21
 msgid "Hello,"
-msgstr "Hallo,"
+msgstr "Wir haben eine Nachricht für:"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:36
 msgid "recipient:"
@@ -85,7 +85,7 @@ msgstr "Empfänger:"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:37
 msgid "location:"
-msgstr "Stations- und Zimmernummer"
+msgstr "Stations- und Zimmernummer:"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:38
 msgid "name:"
