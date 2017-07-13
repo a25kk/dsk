@@ -102,3 +102,9 @@ p, ul, ol {
   text-decoration: none;
   font-weight: bold; 
 }
+
+@media print {
+body,
+.body-wrap {
+  background: #ffffff; }
+}
