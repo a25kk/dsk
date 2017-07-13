@@ -5,7 +5,10 @@
 
 
 #dsk-greeting {
-	//border: 1px solid red;
+	.btn-default {
+		background: $app-primary;
+		color: #fff;
+	}
 }
 
 .app-images-select {
@@ -42,6 +45,11 @@
 
 .app-images-select-form {
 	@include make-row();
+	margin-left: 0;
+	margin-right: 0;
+	background: $app-gray-dark;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 .app-images-select-form-item {

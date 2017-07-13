@@ -15829,6 +15829,12 @@ article.vevent
     list-style-position: inside;
 }
 
+#dsk-greeting .btn-default
+{
+    color: #fff; 
+    background: #3e2794;
+}
+
 .app-images-select
 {
     display: -ms-flexbox;
@@ -15898,8 +15904,14 @@ article.vevent
     display: -ms-flexbox;
     display: flex;
 
-    margin-right: -15px; 
+    margin-right: -15px;
+    margin-right: 0;
     margin-left: -15px;
+    margin-left: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem; 
+
+    background: #e1e1e1;
 
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
