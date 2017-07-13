@@ -104,7 +104,10 @@ p, ul, ol {
 }
 
 @media print {
-body,
+
+body {
+    background: #ffffff !important;
+  }
 .body-wrap {
   background: #ffffff !important; }
 }
