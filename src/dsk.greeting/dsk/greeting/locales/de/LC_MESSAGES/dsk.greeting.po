@@ -29,7 +29,7 @@ msgstr ""
 #. Default: "Select image"
 #: dsk.greeting:/browser/form.pt:71
 msgid "select_image"
-msgstr "Bitte wählen Sie ein Bild aus, das Sie als Gruß an den Patienten schicken möchten."
+msgstr "Bitte wählen Sie ein Bild aus:"
 
 #: dsk.greeting:/browser/form.py:106
 msgid "Send"

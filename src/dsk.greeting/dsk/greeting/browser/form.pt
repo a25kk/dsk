@@ -71,9 +71,9 @@
 
                       <div class="app-page-header">
                         <div class="app-page-title">
-                            <h1 class="app-page-headline">Sie möchten einem/r Freund/Freundin, Familienmitglied oder Liebsten einen Gruß schicken?</h1>
+                            <h1 class="app-page-headline">Sie möchten einer Patientin/einem Patient eine Freude machen?</h1>
                         </div>
-                        <p class="app-page-abstract">Kein Problem! Füllen Sie einfach das Formular aus und schicken Sie es ab. Ihr bebilderter Gruß wird dann als Ausdruck direkt dem Patienten ans Bett gebracht.</p>
+                        <p class="app-page-abstract">Kein Problem! Füllen Sie einfach das Formular aus und schicken Sie es ab. Ihr bebilderter Gruß wird dann als Ausdruck direkt ans Krankenbett gebracht.</p>
                       </div>
                       <label for="form-widgets-image" i18n:translate="select_image">Select image</label>
                       

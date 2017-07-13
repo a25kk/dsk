@@ -57,7 +57,7 @@ class IGreetingForm(form.Schema):
         )
     location = schema.TextLine(
             title=_(u"Station and room number"),
-            required=True 
+            required=False 
         )
     name = schema.TextLine(
             title=_(u"Your name"),
