@@ -128,7 +128,7 @@ class GreetingForm(form.SchemaForm):
 
         registry = getUtility(IRegistry)
         mail_settings = registry.forInterface(IMailSchema, prefix='plone')
-        m_to = "info@kreativkombinat.de"
+        m_to = "empfang@diako-augsburg.de"
         
         m_from = mail_settings.email_from_address
 
