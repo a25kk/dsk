@@ -106,5 +106,5 @@ p, ul, ol {
 @media print {
 body,
 .body-wrap {
-  background: #ffffff; }
+  background: #ffffff !important; }
 }
