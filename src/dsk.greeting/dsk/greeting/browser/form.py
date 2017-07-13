@@ -128,17 +128,14 @@ class GreetingForm(form.SchemaForm):
 
         registry = getUtility(IRegistry)
         mail_settings = registry.forInterface(IMailSchema, prefix='plone')
-        m_to = mail_settings.email_from_address
-
-        m_from = m_to
-
-        print m_to
+        m_to = "info@kreativkombinat.de"
+        
+        m_from = mail_settings.email_from_address
 
         try:
             host.send(mail_text, m_to, m_from, subject=subject,
                       charset=encoding, immediate=True, msg_type="text/html")
 
-            print m_to
 
         except SMTPRecipientsRefused:
 

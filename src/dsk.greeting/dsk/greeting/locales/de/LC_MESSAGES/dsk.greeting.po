@@ -76,8 +76,8 @@ msgid "Image"
 msgstr "das Bild"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:21
-msgid "Hello,"
-msgstr "Wir haben eine Nachricht für:"
+msgid "Hello!"
+msgstr "Ein lieber Gruß für"
 
 #: dsk.greeting:/skins/dsk_greeting/greeting_email.pt:36
 msgid "recipient:"
