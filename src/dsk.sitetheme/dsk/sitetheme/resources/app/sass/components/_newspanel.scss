@@ -47,13 +47,14 @@
     @include media-breakpoint-up(sm) {
         @include make-col(4);
         padding-left: 0;
+        padding-right: 1rem;
     }
-    //padding-right: ($spacer * 6);
 }
 
 .app-news-list-item-main {
     padding: 1rem 1rem 1rem;
     background-color: $app-gray;
+    position: relative;
     @include media-breakpoint-up(sm) {
         @include make-col(8);
         padding: 2rem 1rem 1rem;

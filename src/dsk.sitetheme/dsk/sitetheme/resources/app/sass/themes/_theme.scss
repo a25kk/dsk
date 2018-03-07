@@ -79,3 +79,9 @@
         }
     }
 }
+
+// Bootstrap override
+.dropdown-menu.open,
+.open .dropdown-menu {
+  display: block;
+}

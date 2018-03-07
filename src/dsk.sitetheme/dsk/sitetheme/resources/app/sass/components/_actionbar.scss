@@ -4,14 +4,12 @@
 
 .app-actionbar {
   margin-top: 1rem;
-
 }
 
 .app-actions {
   flex: 1;
   font-size: 0.85rem;
   width: 100%;
-
   .btn-group {
     width: 100%;
   }
@@ -58,7 +56,10 @@
 
 .app-searchbox-btn {
   width: 25%;
-  @include button-variant(#fff, $app-secondary, $app-secondary);
+  background-color: $app-secondary;
+  border: 0;
+  color: #fff;
+  //@include button-variant(#fff, $app-secondary, $app-secondary);
   .fa {
     margin: 0 auto;
   }
@@ -83,4 +84,20 @@
   width: 25%;
   background: $app-secondary;
   color: #fff;
+}
+
+
+
+.btn-default {
+  &:active {
+  background-color: $app-secondary !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+&:hover {
+  background-color: $app-secondary !important;
+    color: #fff !important;
+    border: none !important;
+}
 }

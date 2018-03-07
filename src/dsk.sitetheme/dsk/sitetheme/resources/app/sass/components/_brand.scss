@@ -19,6 +19,7 @@
 .app-brand-img {
     display: block;
     width: 100%;
+    padding: 0 1rem;
     .app-brand-panel & {
         @include make-col(12);
         @include make-col(12);

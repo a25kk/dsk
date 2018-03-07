@@ -43,16 +43,6 @@ if ($galleryContainer !== null) {
     $galleryContainer.classList.add('app-banner--loaded');
 }
 
-// Support greeting image select
-    $("#dsk-greeting a.images-select-image").on("click", function() {
-          var uid = $(this).attr("data-uid");
-          $("#dsk-greeting a.images-select-image").removeClass("active");
-          $(this).addClass("active"); 
-        $("#dsk-greeting #form-widgets-image").val(uid); 
-          return false; 
-
-        })
-
 // Initialize scripts
 
 // Load Slider Resize
