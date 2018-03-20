@@ -3785,7 +3785,7 @@
     pre,
     blockquote
     {
-        border: 1px solid #999;
+        border: 1px solid #adb5bd;
 
         page-break-inside: avoid;
     }
@@ -3852,7 +3852,7 @@
     .table-bordered th,
     .table-bordered td
     {
-        border: 1px solid #ddd !important;
+        border: 1px solid #dee2e6 !important;
     }
 }
 
@@ -6299,6 +6299,30 @@ input[type='color'],
     background-color: #fff;
     background-clip: padding-box;
 }
+@media screen and (prefers-reduced-motion: reduce)
+{
+    .form-control,
+    select,
+    textarea,
+    input[type='text'],
+    input[type='password'],
+    input[type='datetime'],
+    input[type='datetime-local'],
+    input[type='date'],
+    input[type='month'],
+    input[type='time'],
+    input[type='week'],
+    input[type='number'],
+    input[type='email'],
+    input[type='url'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='color'],
+    .app-searchbox-field
+    {
+        transition: none;
+    }
+}
 .form-control::-ms-expand,
 select::-ms-expand,
 textarea::-ms-expand,
@@ -7520,6 +7544,14 @@ input.is-invalid[type='color'] ~ .invalid-tooltip,
     border: 1px solid transparent;
     border-radius: 0;
 }
+@media screen and (prefers-reduced-motion: reduce)
+{
+    .btn,
+    .searchButton
+    {
+        transition: none;
+    }
+}
 .btn:hover,
 .searchButton:hover,
 .btn:focus,
@@ -8213,6 +8245,8 @@ fieldset:disabled a.searchButton
 .btn-link:disabled,
 .btn-link.disabled
 {
+    pointer-events: none; 
+
     color: #6c757d;
 }
 
@@ -8259,7 +8293,9 @@ input[type='button'].btn-block
 }
 
 .dropup,
-.dropdown
+.dropright,
+.dropdown,
+.dropleft
 {
     position: relative;
 }
@@ -8312,8 +8348,17 @@ input[type='button'].btn-block
     background-clip: padding-box;
 }
 
+.dropdown-menu-right
+{
+    right: 0;
+    left: auto;
+}
+
 .dropup .dropdown-menu
 {
+    top: auto;
+    bottom: 100%;
+
     margin-top: 0;
     margin-bottom: .125rem;
 }
@@ -8342,6 +8387,10 @@ input[type='button'].btn-block
 
 .dropright .dropdown-menu
 {
+    top: 0;
+    right: auto;
+    left: 100%;
+
     margin-top: 0;
     margin-left: .125rem;
 }
@@ -8358,6 +8407,7 @@ input[type='button'].btn-block
     vertical-align: .255em;
 
     border-top: .3em solid transparent;
+    border-right: 0;
     border-bottom: .3em solid transparent;
     border-left: .3em solid;
 }
@@ -8374,6 +8424,10 @@ input[type='button'].btn-block
 
 .dropleft .dropdown-menu
 {
+    top: 0;
+    right: 100%;
+    left: auto;
+
     margin-top: 0;
     margin-right: .125rem;
 }
@@ -8419,6 +8473,15 @@ input[type='button'].btn-block
 .dropleft .dropdown-toggle::before
 {
     vertical-align: 0;
+}
+
+.dropdown-menu[x-placement^='top'],
+.dropdown-menu[x-placement^='right'],
+.dropdown-menu[x-placement^='bottom'],
+.dropdown-menu[x-placement^='left']
+{
+    right: auto;
+    bottom: auto;
 }
 
 .dropdown-divider
@@ -8589,9 +8652,15 @@ input[type='button'].btn-block
     padding-right: .5625rem;
     padding-left: .5625rem;
 }
-.dropdown-toggle-split::after
+.dropdown-toggle-split::after,
+.dropup .dropdown-toggle-split::after,
+.dropright .dropdown-toggle-split::after
 {
     margin-left: 0;
+}
+.dropleft .dropdown-toggle-split::before
+{
+    margin-right: 0;
 }
 
 .btn-sm + .dropdown-toggle-split,
@@ -9446,12 +9515,12 @@ input[type='button'].btn-block
 
     opacity: 0;
 }
-.custom-file-input:focus ~ .custom-file-control
+.custom-file-input:focus ~ .custom-file-label
 {
     border-color: #80bdff;
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
 }
-.custom-file-input:focus ~ .custom-file-control::before
+.custom-file-input:focus ~ .custom-file-label::after
 {
     border-color: #80bdff;
 }
@@ -9909,11 +9978,6 @@ input[type='button'].btn-block
     {
         position: absolute;
     }
-    .navbar-expand-sm .navbar-nav .dropdown-menu-right
-    {
-        right: 0;
-        left: auto;
-    }
     .navbar-expand-sm .navbar-nav .nav-link
     {
         padding-right: .5rem;
@@ -9945,11 +10009,6 @@ input[type='button'].btn-block
     .navbar-expand-sm .navbar-toggler
     {
         display: none;
-    }
-    .navbar-expand-sm .dropup .dropdown-menu
-    {
-        top: auto;
-        bottom: 100%;
     }
 }
 
@@ -9991,11 +10050,6 @@ input[type='button'].btn-block
     {
         position: absolute;
     }
-    .navbar-expand-md .navbar-nav .dropdown-menu-right
-    {
-        right: 0;
-        left: auto;
-    }
     .navbar-expand-md .navbar-nav .nav-link
     {
         padding-right: .5rem;
@@ -10027,11 +10081,6 @@ input[type='button'].btn-block
     .navbar-expand-md .navbar-toggler
     {
         display: none;
-    }
-    .navbar-expand-md .dropup .dropdown-menu
-    {
-        top: auto;
-        bottom: 100%;
     }
 }
 
@@ -10073,11 +10122,6 @@ input[type='button'].btn-block
     {
         position: absolute;
     }
-    .navbar-expand-lg .navbar-nav .dropdown-menu-right
-    {
-        right: 0;
-        left: auto;
-    }
     .navbar-expand-lg .navbar-nav .nav-link
     {
         padding-right: .5rem;
@@ -10109,11 +10153,6 @@ input[type='button'].btn-block
     .navbar-expand-lg .navbar-toggler
     {
         display: none;
-    }
-    .navbar-expand-lg .dropup .dropdown-menu
-    {
-        top: auto;
-        bottom: 100%;
     }
 }
 
@@ -10155,11 +10194,6 @@ input[type='button'].btn-block
     {
         position: absolute;
     }
-    .navbar-expand-xl .navbar-nav .dropdown-menu-right
-    {
-        right: 0;
-        left: auto;
-    }
     .navbar-expand-xl .navbar-nav .nav-link
     {
         padding-right: .5rem;
@@ -10191,11 +10225,6 @@ input[type='button'].btn-block
     .navbar-expand-xl .navbar-toggler
     {
         display: none;
-    }
-    .navbar-expand-xl .dropup .dropdown-menu
-    {
-        top: auto;
-        bottom: 100%;
     }
 }
 
@@ -10231,11 +10260,6 @@ input[type='button'].btn-block
 {
     position: absolute;
 }
-.navbar-expand .navbar-nav .dropdown-menu-right
-{
-    right: 0;
-    left: auto;
-}
 .navbar-expand .navbar-nav .nav-link
 {
     padding-right: .5rem;
@@ -10267,11 +10291,6 @@ input[type='button'].btn-block
 .navbar-expand .navbar-toggler
 {
     display: none;
-}
-.navbar-expand .dropup .dropdown-menu
-{
-    top: auto;
-    bottom: 100%;
 }
 
 .navbar-light .navbar-brand
@@ -14258,8 +14277,8 @@ a.text-dark:focus
     }
 }
 
-/*! Flickity v2.0.11
-http://flickity.metafizzy.co
+/*! Flickity v2.1.0
+https://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled
 {
@@ -14311,39 +14330,61 @@ http://flickity.metafizzy.co
     cursor: grabbing;
 }
 
-/* ---- previous/next buttons ---- */
-.flickity-prev-next-button
+/* ---- flickity-button ---- */
+.flickity-button
 {
     position: absolute;
-    top: 50%;
 
-    width: 44px;
-    height: 44px;
-
-    cursor: pointer;
-    /* vertically center */
-    transform: translateY(-50%); 
-
+    color: #333; 
     border: none;
-    border-radius: 50%;
     background: white;
     background: rgba(255, 255, 255, .75);
 }
 
-.flickity-prev-next-button:hover
+.flickity-button:hover
 {
+    cursor: pointer; 
+
     background: white;
 }
 
-.flickity-prev-next-button:focus
+.flickity-button:focus
 {
     outline: none;
-    box-shadow: 0 0 0 5px #09f;
+    box-shadow: 0 0 0 5px #19f;
 }
 
-.flickity-prev-next-button:active
+.flickity-button:active
 {
     opacity: .6;
+}
+
+.flickity-button:disabled
+{
+    cursor: auto;
+    /* prevent disabled button from capturing pointer up event. #716 */
+    pointer-events: none; 
+
+    opacity: .3;
+}
+
+.flickity-button-icon
+{
+    fill: #333;
+}
+
+/* ---- previous/next buttons ---- */
+.flickity-prev-next-button
+{
+    top: 50%;
+
+    width: 44px;
+    height: 44px;
+    /* vertically center */
+
+    transform: translateY(-50%); 
+
+    border-radius: 50%;
 }
 
 .flickity-prev-next-button.previous
@@ -14369,14 +14410,7 @@ http://flickity.metafizzy.co
     left: 10px;
 }
 
-.flickity-prev-next-button:disabled
-{
-    cursor: auto; 
-
-    opacity: .3;
-}
-
-.flickity-prev-next-button svg
+.flickity-prev-next-button .flickity-button-icon
 {
     position: absolute;
     top: 20%;
@@ -14384,11 +14418,6 @@ http://flickity.metafizzy.co
 
     width: 60%;
     height: 60%;
-}
-
-.flickity-prev-next-button .arrow
-{
-    fill: #333;
 }
 
 /* ---- page dots ---- */
@@ -17996,7 +18025,8 @@ body.template-frontpage-view .app-pathbar
 
     margin-right: -15px;
     margin-left: -15px;
-    padding-right: 1rem; 
+    padding-right: 1rem;
+    padding-left: 1rem; 
 
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
