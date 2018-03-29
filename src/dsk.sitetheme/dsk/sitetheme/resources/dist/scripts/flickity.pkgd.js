@@ -1,12 +1,12 @@
 /*!
- * Flickity PACKAGED v2.1.0
+ * Flickity PACKAGED v2.0.11
  * Touch, responsive, flickable carousels
  *
  * Licensed GPLv3 for open source use
  * or Flickity Commercial License for commercial use
  *
- * https://flickity.metafizzy.co
- * Copyright 2015-2018 Metafizzy
+ * http://flickity.metafizzy.co
+ * Copyright 2017 Metafizzy
  */
 
 /**
@@ -1065,7 +1065,6 @@ proto.positionSliderAtSelected = function() {
     return;
   }
   this.x = -this.selectedSlide.target;
-  this.velocity = 0; // stop wobble
   this.positionSlider();
 };
 
@@ -1090,7 +1089,7 @@ proto.settle = function( previousX ) {
     delete this.isFreeScrolling;
     // render position with translateX when settled
     this.positionSlider();
-    this.dispatchEvent( 'settle', null, [ this.selectedIndex ] );
+    this.dispatchEvent('settle');
   }
 };
 
@@ -1142,7 +1141,7 @@ proto.getRestingPosition = function() {
 };
 
 proto.applyDragForce = function() {
-  if ( !this.isDraggable || !this.isPointerDown ) {
+  if ( !this.isPointerDown ) {
     return;
   }
   // change the position to drag position by applying force
@@ -1152,9 +1151,8 @@ proto.applyDragForce = function() {
 };
 
 proto.applySelectedAttraction = function() {
-  // do not attract if pointer down or no slides
-  var dragDown = this.isDraggable && this.isPointerDown;
-  if ( dragDown || this.isFreeScrolling || !this.slides.length ) {
+  // do not attract if pointer down or no cells
+  if ( this.isPointerDown || this.isFreeScrolling || !this.cells.length ) {
     return;
   }
   var distance = this.selectedSlide.target * -1 - this.x;
@@ -1307,12 +1305,6 @@ proto._create = function() {
     window.addEventListener( 'resize', this );
   }
 
-  // add listeners from on option
-  for ( var eventName in this.options.on ) {
-    var listener = this.options.on[ eventName ];
-    this.on( eventName, listener );
-  }
-
   Flickity.createMethods.forEach( function( method ) {
     this[ method ]();
   }, this );
@@ -1374,8 +1366,6 @@ proto.activate = function() {
   this.select( index, false, true );
   // flag for initial activation, for using initialIndex
   this.isInitActivated = true;
-  // ready event. #493
-  this.dispatchEvent('ready');
 };
 
 // slider positions the cells
@@ -1692,7 +1682,6 @@ proto.select = function( index, isWrap, isInstant ) {
   if ( !this.slides[ index ] ) {
     return;
   }
-  var prevIndex = this.selectedIndex;
   this.selectedIndex = index;
   this.updateSelectedSlide();
   if ( isInstant ) {
@@ -1703,12 +1692,8 @@ proto.select = function( index, isWrap, isInstant ) {
   if ( this.options.adaptiveHeight ) {
     this.setGallerySize();
   }
-  // events
-  this.dispatchEvent( 'select', null, [ index ] );
-  // change event if new index
-  if ( index != prevIndex ) {
-    this.dispatchEvent( 'change', null, [ index ] );
-  }
+
+  this.dispatchEvent('select');
   // old v1 event name, remove in v3
   this.dispatchEvent('cellSelect');
 };
@@ -1777,22 +1762,24 @@ proto.unselectSelectedSlide = function() {
  */
 proto.selectCell = function( value, isWrap, isInstant ) {
   // get cell
-  var cell = this.queryCell( value );
-  if ( !cell ) {
-    return;
+  var cell;
+  if ( typeof value == 'number' ) {
+    cell = this.cells[ value ];
+  } else {
+    // use string as selector
+    if ( typeof value == 'string' ) {
+      value = this.element.querySelector( value );
+    }
+    // get cell from element
+    cell = this.getCell( value );
   }
-
-  var index = this.getCellSlideIndex( cell );
-  this.select( index, isWrap, isInstant );
-};
-
-proto.getCellSlideIndex = function( cell ) {
-  // get index of slides that has cell
-  for ( var i=0; i < this.slides.length; i++ ) {
+  // select slide that has cell
+  for ( var i=0; cell && i < this.slides.length; i++ ) {
     var slide = this.slides[i];
     var index = slide.cells.indexOf( cell );
     if ( index != -1 ) {
-      return i;
+      this.select( i, isWrap, isInstant );
+      return;
     }
   }
 };
@@ -1885,23 +1872,6 @@ proto.getAdjacentCellElements = function( adjCount, index ) {
   return cellElems;
 };
 
-/**
- * select slide from number or cell element
- * @param {Element, Selector String, or Number} selector
- */
-proto.queryCell = function( selector ) {
-  if ( typeof selector == 'number' ) {
-    // use number as index
-    return this.cells[ selector ];
-  }
-  if ( typeof selector == 'string' ) {
-    // use string as selector, get element
-    selector = this.element.querySelector( selector );
-  }
-  // get cell from element
-  return this.getCell( selector );
-};
-
 // -------------------------- events -------------------------- //
 
 proto.uiChange = function() {
@@ -1961,40 +1931,21 @@ proto.watchCSS = function() {
 // go previous/next if left/right keys pressed
 proto.onkeydown = function( event ) {
   // only work if element is in focus
-  var isNotFocused = document.activeElement && document.activeElement != this.element;
-  if ( !this.options.accessibility ||isNotFocused ) {
+  if ( !this.options.accessibility ||
+    ( document.activeElement && document.activeElement != this.element ) ) {
     return;
   }
 
-  var handler = Flickity.keyboardHandlers[ event.keyCode ];
-  if ( handler ) {
-    handler.call( this );
-  }
-};
-
-Flickity.keyboardHandlers = {
-  // left arrow
-  37: function() {
+  if ( event.keyCode == 37 ) {
+    // go left
     var leftMethod = this.options.rightToLeft ? 'next' : 'previous';
     this.uiChange();
     this[ leftMethod ]();
-  },
-  // right arrow
-  39: function() {
+  } else if ( event.keyCode == 39 ) {
+    // go right
     var rightMethod = this.options.rightToLeft ? 'previous' : 'next';
     this.uiChange();
     this[ rightMethod ]();
-  },
-};
-
-// ----- focus ----- //
-
-proto.focus = function() {
-  var prevScrollY = window.pageYOffset;
-  this.element.focus();
-  // hack to fix scroll jump after focus, #76
-  if ( window.pageYOffset != prevScrollY ) {
-    window.scrollTo( window.pageXOffset, prevScrollY );
   }
 };
 
@@ -2007,11 +1958,11 @@ proto.deactivate = function() {
   }
   this.element.classList.remove('flickity-enabled');
   this.element.classList.remove('flickity-rtl');
-  this.unselectSelectedSlide();
   // destroy cells
   this.cells.forEach( function( cell ) {
     cell.destroy();
   });
+  this.unselectSelectedSlide();
   this.element.removeChild( this.viewport );
   // move child elements back into element
   moveElements( this.slider.children, this.element );
@@ -2676,7 +2627,7 @@ return Unidragger;
 // ----- defaults ----- //
 
 utils.extend( Flickity.defaults, {
-  draggable: '>1',
+  draggable: true,
   dragThreshold: 3,
 });
 
@@ -2696,12 +2647,10 @@ var isTouch = 'createTouch' in document;
 var isTouchmoveScrollCanceled = false;
 
 proto._createDrag = function() {
-  this.on( 'activate', this.onActivateDrag );
+  this.on( 'activate', this.bindDrag );
   this.on( 'uiChange', this._uiChangeDrag );
   this.on( 'childUIPointerDown', this._childUIPointerDownDrag );
   this.on( 'deactivate', this.unbindDrag );
-  this.on( 'cellChange', this.updateDraggable );
-  // TODO updateDraggable on resize? if groupCells & slides change
   // HACK - add seemingly innocuous handler to fix iOS 10 scroll behavior
   // #457, RubaXa/Sortable#973
   if ( isTouch && !isTouchmoveScrollCanceled ) {
@@ -2710,40 +2659,23 @@ proto._createDrag = function() {
   }
 };
 
-proto.onActivateDrag = function() {
+proto.bindDrag = function() {
+  if ( !this.options.draggable || this.isDragBound ) {
+    return;
+  }
+  this.element.classList.add('is-draggable');
   this.handles = [ this.viewport ];
   this.bindHandles();
-  this.updateDraggable();
-};
-
-proto.onDeactivateDrag = function() {
-  this.unbindHandles();
-  this.element.classList.remove('is-draggable');
-};
-
-proto.updateDraggable = function() {
-  // disable dragging if less than 2 slides. #278
-  if ( this.options.draggable == '>1' ) {
-    this.isDraggable = this.slides.length > 1;
-  } else {
-    this.isDraggable = this.options.draggable;
-  }
-  if ( this.isDraggable ) {
-    this.element.classList.add('is-draggable');
-  } else {
-    this.element.classList.remove('is-draggable');
-  }
-};
-
-// backwards compatibility
-proto.bindDrag = function() {
-  this.options.draggable = true;
-  this.updateDraggable();
+  this.isDragBound = true;
 };
 
 proto.unbindDrag = function() {
-  this.options.draggable = false;
-  this.updateDraggable();
+  if ( !this.isDragBound ) {
+    return;
+  }
+  this.element.classList.remove('is-draggable');
+  this.unbindHandles();
+  delete this.isDragBound;
 };
 
 proto._uiChangeDrag = function() {
@@ -2751,9 +2683,6 @@ proto._uiChangeDrag = function() {
 };
 
 proto._childUIPointerDownDrag = function( event ) {
-  if ( !this.isDraggable ) {
-    return;
-  }
   event.preventDefault();
   this.pointerDownFocus( event );
 };
@@ -2778,10 +2707,6 @@ var clickTypes = {
 };
 
 proto.pointerDown = function( event, pointer ) {
-  if ( !this.isDraggable ) {
-    this._pointerDownDefault( event, pointer );
-    return;
-  }
   // dismiss inputs with text fields. #403, #404
   var isCursorInput = cursorNodes[ event.target.nodeName ] &&
     !clickTypes[ event.target.type ];
@@ -2792,37 +2717,39 @@ proto.pointerDown = function( event, pointer ) {
     return;
   }
 
+  this._dragPointerDown( event, pointer );
+
   // kludge to blur focused inputs in dragger
   var focused = document.activeElement;
-  var canBlur = focused && focused.blur && focused != this.element &&
+  if ( focused && focused.blur && focused != this.element &&
     // do not blur body for IE9 & 10, #117
-    focused != document.body;
-  if ( canBlur ) {
+    focused != document.body ) {
     focused.blur();
   }
   this.pointerDownFocus( event );
   // stop if it was moving
   this.dragX = this.x;
   this.viewport.classList.add('is-pointer-down');
+  // bind move and end events
+  this._bindPostStartEvents( event );
   // track scrolling
   this.pointerDownScroll = getScrollPosition();
   window.addEventListener( 'scroll', this );
 
-  this._pointerDownDefault( event, pointer );
-};
-
-proto._pointerDownDefault = function( event, pointer ) {
-  this._dragPointerDown( event, pointer );
-  // bind move and end events
-  this._bindPostStartEvents( event );
   this.dispatchEvent( 'pointerDown', event, [ pointer ] );
 };
 
 proto.pointerDownFocus = function( event ) {
   // focus element, if not touch, and its not an input or select
   var canPointerDown = getCanPointerDown( event );
-  if ( !canPointerDown ) {
-    this.focus();
+  if ( !this.options.accessibility || canPointerDown ) {
+    return;
+  }
+  var prevScrollY = window.pageYOffset;
+  this.element.focus();
+  // hack to fix scroll jump after focus, #76
+  if ( window.pageYOffset != prevScrollY ) {
+    window.scrollTo( window.pageXOffset, prevScrollY );
   }
 };
 
@@ -2841,7 +2768,7 @@ function getCanPointerDown( event ) {
 proto.canPreventDefaultOnPointerDown = function( event ) {
   // prevent default, unless touchstart or input
   var canPointerDown = getCanPointerDown( event );
-  return this.isDraggable && !canPointerDown;
+  return !canPointerDown;
 };
 
 // ----- move ----- //
@@ -2867,9 +2794,6 @@ proto.pointerDone = function() {
 // -------------------------- dragging -------------------------- //
 
 proto.dragStart = function( event, pointer ) {
-  if ( !this.isDraggable ) {
-    return;
-  }
   this.dragStartPosition = this.x;
   this.startAnimation();
   window.removeEventListener( 'scroll', this );
@@ -2883,18 +2807,11 @@ proto.pointerMove = function( event, pointer ) {
 };
 
 proto.dragMove = function( event, pointer, moveVector ) {
-  if ( !this.isDraggable ) {
-    return;
-  }
   event.preventDefault();
 
   this.previousDragX = this.dragX;
   // reverse if right-to-left
   var direction = this.options.rightToLeft ? -1 : 1;
-  if ( this.options.wrapAround ) {
-    // wrap around move. #589
-    moveVector.x = moveVector.x % this.slideableWidth;
-  }
   var dragX = this.dragStartPosition + moveVector.x * direction;
 
   if ( !this.options.wrapAround && this.slides.length ) {
@@ -2912,9 +2829,6 @@ proto.dragMove = function( event, pointer, moveVector ) {
 };
 
 proto.dragEnd = function( event, pointer ) {
-  if ( !this.isDraggable ) {
-    return;
-  }
   if ( this.options.freeScroll ) {
     this.isFreeScrolling = true;
   }
@@ -3220,7 +3134,7 @@ function PrevNextButton( direction, parent ) {
   this._create();
 }
 
-PrevNextButton.prototype = Object.create( TapListener.prototype );
+PrevNextButton.prototype = new TapListener();
 
 PrevNextButton.prototype._create = function() {
   // properties
@@ -3230,14 +3144,14 @@ PrevNextButton.prototype._create = function() {
   this.isLeft = this.direction == leftDirection;
 
   var element = this.element = document.createElement('button');
-  element.className = 'flickity-button flickity-prev-next-button';
+  element.className = 'flickity-prev-next-button';
   element.className += this.isPrevious ? ' previous' : ' next';
   // prevent button from submitting form http://stackoverflow.com/a/10836076/182183
   element.setAttribute( 'type', 'button' );
   // init as disabled
   this.disable();
 
-  element.setAttribute( 'aria-label', this.isPrevious ? 'Previous' : 'Next' );
+  element.setAttribute( 'aria-label', this.isPrevious ? 'previous' : 'next' );
 
   // create arrow
   var svg = this.createSVG();
@@ -3267,7 +3181,6 @@ PrevNextButton.prototype.deactivate = function() {
 
 PrevNextButton.prototype.createSVG = function() {
   var svg = document.createElementNS( svgURI, 'svg');
-  svg.setAttribute( 'class', 'flickity-button-icon' );
   svg.setAttribute( 'viewBox', '0 0 100 100' );
   var path = document.createElementNS( svgURI, 'path');
   var pathMovements = getArrowMovements( this.parent.options.arrowShape );
@@ -3879,7 +3792,9 @@ proto.insert = function( elems, index ) {
   }
 
   this._sizeCells( cells );
-  this.cellChange( index, true );
+
+  var selectedIndexDelta = index > this.selectedIndex ? 0 : cells.length;
+  this._cellAddedRemoved( index, selectedIndexDelta );
 };
 
 proto.append = function( elems ) {
@@ -3896,20 +3811,39 @@ proto.prepend = function( elems ) {
  */
 proto.remove = function( elems ) {
   var cells = this.getCells( elems );
-  if ( !cells || !cells.length ) {
-    return;
+  var selectedIndexDelta = 0;
+  var len = cells.length;
+  var i, cell;
+  // calculate selectedIndexDelta, easier if done in seperate loop
+  for ( i=0; i < len; i++ ) {
+    cell = cells[i];
+    var wasBefore = this.cells.indexOf( cell ) < this.selectedIndex;
+    selectedIndexDelta -= wasBefore ? 1 : 0;
   }
 
-  var minCellIndex = this.cells.length - 1;
-  // remove cells from collection & DOM
-  cells.forEach( function( cell ) {
+  for ( i=0; i < len; i++ ) {
+    cell = cells[i];
     cell.remove();
-    var index = this.cells.indexOf( cell );
-    minCellIndex = Math.min( index, minCellIndex );
+    // remove item from collection
     utils.removeFrom( this.cells, cell );
-  }, this );
+  }
 
-  this.cellChange( minCellIndex, true );
+  if ( cells.length ) {
+    // update stuff
+    this._cellAddedRemoved( 0, selectedIndexDelta );
+  }
+};
+
+// updates when cells are added or removed
+proto._cellAddedRemoved = function( changedCellIndex, selectedIndexDelta ) {
+  // TODO this math isn't perfect with grouped slides
+  selectedIndexDelta = selectedIndexDelta || 0;
+  this.selectedIndex += selectedIndexDelta;
+  this.selectedIndex = Math.max( 0, Math.min( this.slides.length - 1, this.selectedIndex ) );
+
+  this.cellChange( changedCellIndex, true );
+  // backwards compatibility
+  this.emitEvent( 'cellAddedRemoved', [ changedCellIndex, selectedIndexDelta ] );
 };
 
 /**
@@ -3932,24 +3866,24 @@ proto.cellSizeChange = function( elem ) {
  * @param {Integer} changedCellIndex - index of the changed cell, optional
  */
 proto.cellChange = function( changedCellIndex, isPositioningSlider ) {
-  var prevSelectedElem = this.selectedElement;
+  var prevSlideableWidth = this.slideableWidth;
   this._positionCells( changedCellIndex );
   this._getWrapShiftCells();
   this.setGallerySize();
-  // update selectedIndex
-  // try to maintain position & select previous selected element
-  var cell = this.getCell( prevSelectedElem );
-  if ( cell ) {
-    this.selectedIndex = this.getCellSlideIndex( cell );
-  }
-  this.selectedIndex = Math.min( this.slides.length - 1, this.selectedIndex );
-
   this.emitEvent( 'cellChange', [ changedCellIndex ] );
   // position slider
-  this.select( this.selectedIndex );
-  // do not position slider after lazy load
-  if ( isPositioningSlider ) {
-    this.positionSliderAtSelected();
+  if ( this.options.freeScroll ) {
+    // shift x by change in slideableWidth
+    // TODO fix position shifts when prepending w/ freeScroll
+    var deltaX = prevSlideableWidth - this.slideableWidth;
+    this.x += deltaX * this.cellAlign;
+    this.positionSlider();
+  } else {
+    // do not position slider after lazy load
+    if ( isPositioningSlider ) {
+      this.positionSliderAtSelected();
+    }
+    this.select( this.selectedIndex );
   }
 };
 
@@ -4019,18 +3953,12 @@ proto.lazyLoad = function() {
 
 function getCellLazyImages( cellElem ) {
   // check if cell element is lazy image
-  if ( cellElem.nodeName == 'IMG' ) {
-    var lazyloadAttr = cellElem.getAttribute('data-flickity-lazyload');
-    var srcAttr = cellElem.getAttribute('data-flickity-lazyload-src');
-    var srcsetAttr = cellElem.getAttribute('data-flickity-lazyload-srcset');
-    if ( lazyloadAttr || srcAttr || srcsetAttr ) {
-      return [ cellElem ];
-    }
+  if ( cellElem.nodeName == 'IMG' &&
+    cellElem.getAttribute('data-flickity-lazyload') ) {
+    return [ cellElem ];
   }
   // select lazy images in cell
-  var lazySelector = 'img[data-flickity-lazyload], ' +
-    'img[data-flickity-lazyload-src], img[data-flickity-lazyload-srcset]';
-  var imgs = cellElem.querySelectorAll( lazySelector );
+  var imgs = cellElem.querySelectorAll('img[data-flickity-lazyload]');
   return utils.makeArray( imgs );
 }
 
@@ -4050,19 +3978,10 @@ LazyLoader.prototype.handleEvent = utils.handleEvent;
 LazyLoader.prototype.load = function() {
   this.img.addEventListener( 'load', this );
   this.img.addEventListener( 'error', this );
-  // get src & srcset
-  var src = this.img.getAttribute('data-flickity-lazyload') ||
-    this.img.getAttribute('data-flickity-lazyload-src');
-  var srcset = this.img.getAttribute('data-flickity-lazyload-srcset');
-  // set src & serset
-  this.img.src = src;
-  if ( srcset ) {
-    this.img.setAttribute( 'srcset', srcset );
-  }
+  // load image
+  this.img.src = this.img.getAttribute('data-flickity-lazyload');
   // remove attr
   this.img.removeAttribute('data-flickity-lazyload');
-  this.img.removeAttribute('data-flickity-lazyload-src');
-  this.img.removeAttribute('data-flickity-lazyload-srcset');
 };
 
 LazyLoader.prototype.onload = function( event ) {
@@ -4095,14 +4014,14 @@ return Flickity;
 }));
 
 /*!
- * Flickity v2.1.0
+ * Flickity v2.0.11
  * Touch, responsive, flickable carousels
  *
  * Licensed GPLv3 for open source use
  * or Flickity Commercial License for commercial use
  *
- * https://flickity.metafizzy.co
- * Copyright 2015-2018 Metafizzy
+ * http://flickity.metafizzy.co
+ * Copyright 2017 Metafizzy
  */
 
 ( function( window, factory ) {
