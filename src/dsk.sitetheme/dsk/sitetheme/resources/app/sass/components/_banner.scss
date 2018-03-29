@@ -108,8 +108,11 @@
 }
 
 .app-corporate-wrapper {
-  border: 0px solid red;
   @extend.container;
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
 
   .app-coporate-logo {
     width: 160px;
