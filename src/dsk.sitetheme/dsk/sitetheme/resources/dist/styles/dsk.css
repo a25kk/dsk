@@ -17914,9 +17914,17 @@ body.template-frontpage-view .app-pathbar
 
 .app-contact-position
 {
+    font-size: .8rem; 
     font-weight: 700;
 
     padding: 1rem;
+}
+@media (min-width: 1200px)
+{
+    .app-contact-position
+    {
+        font-size: 1rem;
+    }
 }
 
 .app-contact-phone
