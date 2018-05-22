@@ -12925,6 +12925,10 @@ img[data-sizes="auto"] {
   width: 100%;
 }
 
+figure {
+  margin: 0;
+}
+
 .app-actionbar {
   margin-top: 1rem;
 }
