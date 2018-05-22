@@ -12712,6 +12712,24 @@ textarea {
   outline: transparent;
 }
 
+span.required:after {
+  content: "*";
+  color: #3e2794;
+}
+
+.formControls {
+  margin-bottom: 1rem;
+}
+
+.fieldErrorBox {
+  color: #ff0000 !important;
+}
+
+.help-block {
+  display: block;
+  font-weight: 500;
+}
+
 .app-brand {
   display: -ms-flexbox;
   display: flex;

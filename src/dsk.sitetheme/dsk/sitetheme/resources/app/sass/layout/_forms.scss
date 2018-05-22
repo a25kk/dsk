@@ -127,3 +127,27 @@ textarea {
   color: #555;
   outline: transparent;
 }
+
+//
+// pfg overrides
+//------------------------------------
+
+
+//## Mark fields as required
+  span.required:after {
+    content: "*";
+    color: $app-primary;
+  }
+
+.formControls {
+  margin-bottom: 1rem;
+}
+
+.fieldErrorBox {
+  color: #ff0000 !important;
+}
+
+.help-block {
+  display: block;
+  font-weight: 500;
+}
