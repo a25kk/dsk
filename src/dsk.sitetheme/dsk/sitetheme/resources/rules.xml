@@ -21,6 +21,7 @@
     <theme href="dist/full/index.html" css:if-content="body.section-kontakt " />
     <theme href="dist/full/index.html" css:if-content="body.template-search" />
     <theme href="dist/full/index.html" css:if-content="body.section-events" />
+    <theme href="dist/full/index.html" css:if-content="body.section-datenschutzerklaerung" />
 
     
 
