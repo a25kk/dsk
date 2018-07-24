@@ -26,6 +26,25 @@
       layer="..interfaces.IDskSitecontentLayer"
       />
 
+  <!-- Content page image gallery -->
+  <browser:page
+      for="dsk.sitecontent.contentpage.IContentPage"
+      name="gallery-view"
+      class=".contentpage.GalleryView"
+      template="galleryview.pt"
+      permission="zope2.View"
+      layer="..interfaces.IDskSitecontentLayer"
+      />
+
+  <browser:page
+      for="dsk.sitecontent.contentpage.IContentPage"
+      name="gallery-preview"
+      class=".contentpage.GalleryPreview"
+      template="gallerypreview.pt"
+      permission="zope2.View"
+      layer="..interfaces.IDskSitecontentLayer"
+      />
+
     <!-- News Item preview card -->
     <browser:page
             for="plone.app.contenttypes.interfaces.INewsItem"

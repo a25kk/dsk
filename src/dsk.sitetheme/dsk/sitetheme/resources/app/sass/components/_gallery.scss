@@ -1,0 +1,91 @@
+//
+// Gallery
+// ---------------------------------------------------
+
+.app-gallery {
+    overflow: hidden;
+    margin-bottom: 1rem;
+        .flickity-page-dots {
+            display: none;
+        }   
+}
+
+.project-gallery {
+    position: relative;
+}
+
+.app-gallery-caption {
+    width: 100%;
+        @include media-breakpoint-up(sm) {
+            position: absolute;
+            top: 2rem;
+            left: 4rem;
+            z-index: 1001;
+            width: 35%;
+            padding: 4rem 2rem 2rem 2rem;
+            background: $app-primary;
+        }
+}
+
+.app-gallery-cell {
+    width: 100%;
+    overflow: hidden;
+
+
+// Image Size Ratio 3:2
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 475.98px) {
+    min-height: 192px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 476px) and (max-width: 576px) {
+    min-height: 298px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    min-height: 336px;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    min-height: 325px;
+}
+  
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    min-height: 447px;
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    min-height: 537px;
+}
+
+img {
+    width: 100%;
+}
+}
+
+/* ---- flickity overrides ---- */
+
+.flickity-prev-next-button {
+    background: transparent;
+}
+
+.flickity-prev-next-button .arrow {
+    fill: #fff;
+}
+
+.flickity-prev-next-button:hover {
+    background: none;
+}
+
+.flickity-page-dots {
+    bottom: 20px !important;
+}
+
+.flickity-page-dots .dot {
+    background: #fff;
+}
