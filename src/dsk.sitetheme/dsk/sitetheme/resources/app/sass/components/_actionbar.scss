@@ -28,6 +28,10 @@
 }
 
 .app-action-search {
+  display: none;
+  @include media-breakpoint-up(sm) {
+    display: block;
+  }
   flex: 1;
   color: $app-primary;
   background: $app-gray;
@@ -44,6 +48,8 @@
 
 .app-searchbox-field {
   @extend .form-control;
+  //padding-left: 0 !important;
+  //padding-right: 0 !important;
   width: 75%;
   background-color: $app-gray;
   border-color: $app-gray;
@@ -59,6 +65,8 @@
   background-color: $app-secondary;
   border: 0;
   color: #fff;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   //@include button-variant(#fff, $app-secondary, $app-secondary);
   .fa {
     margin: 0 auto;

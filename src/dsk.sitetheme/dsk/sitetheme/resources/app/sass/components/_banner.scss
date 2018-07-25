@@ -72,6 +72,8 @@
 
 .flickity-prev-next-button {
   background: transparent;
+  position: absolute;
+  border: none;
 }
 
 .flickity-prev-next-button .arrow {
@@ -108,15 +110,18 @@
 }
 
 .app-corporate-wrapper {
-  border: 0px solid red;
   @extend.container;
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
 
   .app-coporate-logo {
     width: 160px;
     height: 160px;
     margin-top: -78px;
     margin-right: 6rem;
-    z-index: 200000000;
+    z-index: 2000;
     position: relative;
     //right: 0;
 

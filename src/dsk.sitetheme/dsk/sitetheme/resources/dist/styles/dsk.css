@@ -16079,7 +16079,14 @@ body.template-frontpage-view .app-staticbanner
 
 .app-corporate-wrapper
 {
-    border: 0 solid red;
+    display: none;
+}
+@media (min-width: 768px)
+{
+    .app-corporate-wrapper
+    {
+        display: block;
+    }
 }
 .app-corporate-wrapper .app-coporate-logo
 {
@@ -17000,6 +17007,11 @@ body.template-frontpage-view .app-pathbar
     }
 }
 
+.app-news-list-item-aside figure
+{
+    margin-bottom: 0;
+}
+
 .app-news-list-item-main
 {
     position: relative; 
@@ -17651,8 +17663,7 @@ body.template-frontpage-view .app-pathbar
 
     margin-right: -15px;
     margin-left: -15px;
-    padding-top: 1rem;
-    padding-bottom: 1rem; 
+    padding: 1rem; 
 
     border-bottom: 1px solid #eee;
 
@@ -17681,8 +17692,7 @@ body.template-frontpage-view .app-pathbar
 
     margin-right: -15px;
     margin-left: -15px;
-    padding-top: 1rem;
-    padding-bottom: 1rem; 
+    padding: 1rem; 
 
     border-bottom: 1px solid #eee;
 
@@ -17719,7 +17729,8 @@ body.template-frontpage-view .app-pathbar
 {
     .app-summary-wrapper .app-summary-right
     {
-        max-width: 66.6666666667%; 
+        max-width: 66.6666666667%;
+        padding-left: 2rem; 
 
         -ms-flex: 0 0 66.6666666667%;
             flex: 0 0 66.6666666667%;
@@ -17903,9 +17914,17 @@ body.template-frontpage-view .app-pathbar
 
 .app-contact-position
 {
+    font-size: .8rem; 
     font-weight: 700;
 
     padding: 1rem;
+}
+@media (min-width: 1200px)
+{
+    .app-contact-position
+    {
+        font-size: 1rem;
+    }
 }
 
 .app-contact-phone

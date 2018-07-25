@@ -14,6 +14,7 @@
     <theme href="dist/signin/index.html" css:if-content="body.template-pwreset_finish" />
     <theme href="dist/full/index.html" css:if-content="body.subsection-diese-seite-wird-gerade-erstellt" />
     <theme href="dist/frontpage/index.html" css:if-content="body.template-frontpage-view" />
+    <theme href="dist/full/index.html" css:if-content="body.section-datenschutzerklaerung" />
     <theme href="dist/index.html" css:if-content="body.portaltype-dsk-sitecontent-contentpage" />
     <theme href="dist/medicine/index.html" css:if-content="body.section-medizin-und-aerzte" />
     <theme href="dist/care/index.html" css:if-content="body.section-pflege-in-der-stadtklinik" />
@@ -422,6 +423,12 @@
 
         <after css:theme-children="#app-sidebar"
           css:content-children="#app-contact-viewlet-cards" />
+
+        <!-- Support cookie consent -->
+        <after css:theme-children="#app-footer"
+               css:content="#cookie-consent"
+               css:if-content="#cookie-consent" />
+
 
     </rules>
 
