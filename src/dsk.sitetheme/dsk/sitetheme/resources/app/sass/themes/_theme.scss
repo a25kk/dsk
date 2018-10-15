@@ -9,14 +9,14 @@
 
 .app-wrapper {
    @include media-breakpoint-up(lg) {
-    background: transparent url("../assets/img/top.png") repeat-x scroll 0px 19px;
+    background: transparent url("../assets/images/top.png") repeat-x scroll 0px 19px;
    }
 
 }
 
 .template-frontpage-view .app-wrapper {
    @include media-breakpoint-up(lg) {
-    background: transparent url("../assets/img/top-fp.png") repeat-x scroll 0px 20px;
+    background: transparent url("../assets/images/top-fp.png") repeat-x scroll 0px 20px;
    }
 
 }
