@@ -1,4 +1,4 @@
 setuptools==40.0.0
-zc.buildout==2.9.5
-cryptography==2.1.4
+zc.buildout==2.12.1
+cryptography==2.3
 Fabric==1.14.0
